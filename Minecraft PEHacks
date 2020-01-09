@@ -1,0 +1,4487 @@
+
+ModPE.langEdit("menu.copyright","MINECRAFTPE-MODS.COM")
+ModPE.langEdit("deathScreen.message", "§l§cWasted")
+ModPE.langEdit("progressScreen.generating","§aTop hack client");
+ModPE.langEdit("menu.version","§aAlphaHackV4");
+var VERSION = "V4";
+var NAME = "AlphaHack";
+var DEVELOPERS = "Real Virus325";
+var cBtn = "Xidan"
+var fontName="minecraft.txt";
+var GUI;
+var menu;
+var exitUI;
+var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+var Button = android.widget.Button;
+var LinearLayout = android.widget.LinearLayout;
+var RelativeLayout = android.widget.RelativeLayout;
+var PopupWindow = android.widget.PopupWindow;
+var ScrollView = android.widget.ScrollView;
+var TextView = android.widget.TextView;
+var CheckBox = android.widget.CheckBox;
+var Switch = android.widget.Switch;
+var Toast = android.widget.Toast;
+var Runnable = java.lang.Runnable;
+var View = android.view.View;
+var ColorDrawable = android.graphics.drawable.ColorDrawable;
+var Color = android.graphics.Color;
+var Gravity = android.view.Gravity;
+var Intent = android.content.Intent;
+var Uri = android.net.Uri;
+
+var bg = new android.graphics.drawable.GradientDrawable();
+bg.setColor(android.graphics.Color.DKGRAY); //ButtonBGColor
+bg.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg.setCornerRadius(1); //ButtonCornerRadius
+
+var zm = new android.graphics.drawable.GradientDrawable();
+zm.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+zm.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+zm.setCornerRadius(1); //ButtonCornerRadius
+
+var bg3 = new android.graphics.drawable.GradientDrawable();
+bg3.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+bg3.setCornerRadius(1); //ButtonCornerRadius
+
+var bg4 = new android.graphics.drawable.GradientDrawable();
+bg4.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+bg4.setCornerRadius(1); //ButtonCornerRadius
+
+var bg5 = new android.graphics.drawable.GradientDrawable();
+bg5.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+bg5.setCornerRadius(1); //ButtonCornerRadius
+
+var bg94 = new android.graphics.drawable.GradientDrawable();
+bg94.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bg94.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg94.setCornerRadius(1); //ButtonCornerRadius
+
+var qeq = new android.graphics.drawable.GradientDrawable();
+qeq.setStroke(4, android.graphics.Color.CYAN); //ButtonStroke
+qeq.setCornerRadius(1); //ButtonCornerRadius
+
+var bg914 = new android.graphics.drawable.GradientDrawable();
+bg914.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bg914.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg914.setCornerRadius(1); //ButtonCornerRadius
+
+var bgfly = new android.graphics.drawable.GradientDrawable();
+bgfly.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bgfly.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+bgfly.setCornerRadius(1); //ButtonCornerRadius
+
+var bgfly1 = new android.graphics.drawable.GradientDrawable();
+bgfly1.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bgfly1.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+bgfly1.setCornerRadius(1); //ButtonCornerRadius
+
+var bg95 = new android.graphics.drawable.GradientDrawable();
+bg95.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+bg95.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg95.setCornerRadius(1); //ButtonCornerRadius
+
+var abh = new android.graphics.drawable.GradientDrawable();
+abh.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+abh.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+abh.setCornerRadius(1); //ButtonCornerRadius
+
+var bg96 = new android.graphics.drawable.GradientDrawable();
+bg96.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+bg96.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg96.setCornerRadius(1); //ButtonCornerRadius
+
+var bg97 = new android.graphics.drawable.GradientDrawable();
+bg97.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+bg97.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg97.setCornerRadius(1); //ButtonCornerRadius
+
+var bg98 = new android.graphics.drawable.GradientDrawable();
+bg98.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+bg98.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg98.setCornerRadius(1); //ButtonCornerRadius
+
+var bg99 = new android.graphics.drawable.GradientDrawable();
+bg99.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+bg99.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bg99.setCornerRadius(1); //ButtonCornerRadius
+
+var xid = new android.graphics.drawable.GradientDrawable();
+xid.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+xid.setCornerRadius(1); //ButtonCornerRadius
+
+var h = new android.graphics.drawable.GradientDrawable();
+h.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+h.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+h.setCornerRadius(1); //ButtonCornerRadius
+
+var vr = new android.graphics.drawable.GradientDrawable();
+vr.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+vr.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+vr.setCornerRadius(1); //ButtonCornerRadius
+
+var safe = new android.graphics.drawable.GradientDrawable();
+safe.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+safe.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+safe.setCornerRadius(1); //ButtonCornerRadius
+
+var kek = new android.graphics.drawable.GradientDrawable();
+kek.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+kek.setCornerRadius(1); //ButtonCornerRadius
+
+var kek1 = new android.graphics.drawable.GradientDrawable();
+kek1.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+kek1.setCornerRadius(1); //ButtonCornerRadius
+
+var h2 = new android.graphics.drawable.GradientDrawable();
+h2.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+h2.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+h2.setCornerRadius(1); //ButtonCornerRadius
+
+var t = new android.graphics.drawable.GradientDrawable();
+t.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+t.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+t.setCornerRadius(1); //ButtonCornerRadius
+
+var s = new android.graphics.drawable.GradientDrawable();
+s.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+s.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+s.setCornerRadius(1); //ButtonCornerRadius
+
+var fe = new android.graphics.drawable.GradientDrawable();
+fe.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+fe.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+fe.setCornerRadius(1); //ButtonCornerRadius
+
+var t2 = new android.graphics.drawable.GradientDrawable();
+t2.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+t2.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+t2.setCornerRadius(1); //ButtonCornerRadius
+
+var sp = new android.graphics.drawable.GradientDrawable();
+sp.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+sp.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+sp.setCornerRadius(1); //ButtonCornerRadius
+
+var zmm = new android.graphics.drawable.GradientDrawable();
+zmm.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+zmm.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+zmm.setCornerRadius(1); //ButtonCornerRadius
+
+var s2 = new android.graphics.drawable.GradientDrawable();
+s2.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+s2.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+s2.setCornerRadius(1); //ButtonCornerRadius
+
+var aw = new android.graphics.drawable.GradientDrawable();
+aw.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+aw.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+aw.setCornerRadius(1); //ButtonCornerRadius 
+
+var lc = new android.graphics.drawable.GradientDrawable();
+lc.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+lc.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+lc.setCornerRadius(1); //ButtonCornerRadius
+
+var fs = new android.graphics.drawable.GradientDrawable();
+fs.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+fs.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+fs.setCornerRadius(1); //ButtonCornerRadius
+
+var akb = new android.graphics.drawable.GradientDrawable();
+akb.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+akb.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+akb.setCornerRadius(1); //ButtonCornerRadius
+
+var ml = new android.graphics.drawable.GradientDrawable();
+ml.setStroke(5, android.graphics.Color.GREEN); //ButtonStroke
+ml.setCornerRadius(1); //ButtonCornerRadius
+//свободно ↑↑↑
+var cr = new android.graphics.drawable.GradientDrawable();
+cr.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+cr.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+cr.setCornerRadius(1); //ButtonCornerRadius
+
+var ht = new android.graphics.drawable.GradientDrawable();
+ht.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+ht.setStroke(3, android.graphics.Color.GREEN); //pButtonStroke
+ht.setCornerRadius(2); //pButtonCornerRadius
+
+var ht1 = new android.graphics.drawable.GradientDrawable();
+ht1.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+ht1.setStroke(3, android.graphics.Color.RED); //pButtonStroke
+ht1.setCornerRadius(2); //pButtonCornerRadius
+
+var bgh = new android.graphics.drawable.GradientDrawable();
+bgh.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bgh.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bgh.setCornerRadius(1); //ButtonCornerRadius
+
+var t3 = new android.graphics.drawable.GradientDrawable();
+t3.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+t3.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+t3.setCornerRadius(1); //ButtonCornerRadius
+
+var j = new android.graphics.drawable.GradientDrawable();
+j.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+j.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+j.setCornerRadius(1); //ButtonCornerRadius
+
+var lel = new android.graphics.drawable.GradientDrawable();
+lel.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+lel.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+lel.setCornerRadius(1); //ButtonCornerRadius
+
+var el = new android.graphics.drawable.GradientDrawable();
+el.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+el.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+el.setCornerRadius(1); //ButtonCornerRadius
+
+var bg9m = new android.graphics.drawable.GradientDrawable();
+bg9m.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bg9m.setStroke(2, android.graphics.Color.RED); //ButtonStroke
+bg9m.setCornerRadius(1); //ButtonCornerRadius
+
+var bb = new android.graphics.drawable.GradientDrawable();
+bb.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+bb.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+bb.setCornerRadius(1); //ButtonCornerRadius
+
+var wl = new android.graphics.drawable.GradientDrawable();
+wl.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+wl.setStroke(2, android.graphics.Color.GREEN); //ButtonStroke
+wl.setCornerRadius(1); //ButtonCornerRadius
+
+var fl = new android.graphics.drawable.GradientDrawable();
+fl.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+fl.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+fl.setCornerRadius(1); //ButtonCornerRadius
+
+var j2 = new android.graphics.drawable.GradientDrawable();
+j2.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor //ButtonStroke
+j2.setStroke(2, android.graphics.Color.CYAN); //ButtonStroke
+j2.setCornerRadius(1); //ButtonCornerRadius
+
+var xbg = new android.graphics.drawable.GradientDrawable();
+xbg.setColor(android.graphics.Color.DKGRAY); //XButtonBGColor
+xbg.setStroke(2, android.graphics.Color.GREEN); //XButtonStroke
+xbg.setCornerRadius(2); //XButtonCornerRadius
+
+var pbg = new android.graphics.drawable.GradientDrawable();
+pbg.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+pbg.setStroke(2, android.graphics.Color.GREEN); //pButtonStroke
+pbg.setCornerRadius(2); //pButtonCornerRadius
+
+var bgz9m = new android.graphics.drawable.GradientDrawable();
+bgz9m.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+bgz9m.setStroke(2, android.graphics.Color.RED); //pButtonStroke
+bgz9m.setCornerRadius(2); //pButtonCornerRadius
+
+var pbg1 = new android.graphics.drawable.GradientDrawable();
+pbg1.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+pbg1.setStroke(2, android.graphics.Color.GREEN); //pButtonStroke
+pbg1.setCornerRadius(2); //pButtonCornerRadius
+
+var drp = new android.graphics.drawable.GradientDrawable();
+drp.setColor(android.graphics.Color.DKGRAY); //pButtonBGColor
+drp.setStroke(2, android.graphics.Color.GREEN); //pButtonStroke
+drp.setCornerRadius(2); //pButtonCornerRadius
+
+var pbgm = new android.graphics.drawable.GradientDrawable();
+pbgm.setStroke(3, android.graphics.Color.RED); //pButtonStroke
+pbgm.setCornerRadius(2); //pButtonCornerRadius
+
+
+var Button = android.widget.Button;
+var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+
+var Utils = {
+	        
+            Block: {
+                 isLiquid: function(id) {
+			if(id >= 8 && id <= 11) return true;
+			return false;
+		         }
+            },
+            Player: {
+                isInWater: function() {
+			if(Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            } else {
+			return false;
+			   }
+		    },
+                isOnGround: function() {
+			var y = Entity.getY(getPlayerEnt());
+			while(y > 1) y -= 1;
+			if((Math.round(y * 100) >= 61 && Math.round(y * 100) <= 63) && getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())) != 0 && !Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            }
+			if((Math.round(y * 100) >= 11 && Math.round(y * 100) <= 13) && getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())) != 0 && !Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            } else {
+			return false;
+			  }
+		    },
+            isCollidedHorizontally: function() {
+			var x = Entity.getX(getPlayerEnt());
+			var z = Entity.getZ(getPlayerEnt());
+			var blockX = Math.round(x - 0.5);
+			var blockZ = Math.round(z - 0.5);
+			while(x < 1) x += 1;
+			while(z < 1) z += 1;
+			while(x > 1) x -= 1;
+			while(z > 1) z -= 1;
+
+			if(Math.round(x * 100) == 31) x -= 0.01;
+			if(Math.round(z * 100) == 31) z -= 0.01;
+			if(Math.round(x * 100) == 69) x += 0.01;
+			if(Math.round(z * 100) == 69) z += 0.01;
+			if(Math.round(x * 100) == 30) blockX--;
+			if(Math.round(z * 100) == 30) blockZ--;
+			if(Math.round(x * 100) == 70) blockX++;
+			if(Math.round(z * 100) == 70) blockZ++;
+			//clientMessage(blockX+";"+blockZ);
+			if(getTile(blockX, Entity.getY(getPlayerEnt()), blockZ) == 0 && getTile(blockX, Entity.getY(getPlayerEnt()) - 1, blockZ) == 0) return false;
+
+			if(Block.getDestroyTime(getTile(blockX, Entity.getY(getPlayerEnt()) - 1, blockZ)) <= 0.1 && Block.getDestroyTime(getTile(blockX, Entity.getY(getPlayerEnt()), blockZ)) <= 0.1) return false;
+
+			if(Math.round(x * 100) == 30 || Math.round(x * 100) == 70) return true;
+			if(Math.round(z * 100) == 30 || Math.round(z * 100) == 70) return true;
+			return false;
+		}
+	}
+};
+
+var Utils = {
+	        
+            Block: {
+                 isLiquid: function(id) {
+			if(id >= 8 && id <= 11) return true;
+			return false;
+		         }
+            },
+            Player: {
+                isInWater: function() {
+			if(Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            } else {
+			return false;
+			   }
+		    },
+                isOnGround: function() {
+			var y = Entity.getY(getPlayerEnt());
+			while(y > 1) y -= 1;
+			if((Math.round(y * 100) >= 61 && Math.round(y * 100) <= 63) && getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())) != 0 && !Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            }
+			if((Math.round(y * 100) >= 11 && Math.round(y * 100) <= 13) && getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())) != 0 && !Utils.Block.isLiquid(getTile(Entity.getX(getPlayerEnt()), Entity.getY(getPlayerEnt()) - 1.65, Entity.getZ(getPlayerEnt())))) {
+            return true;
+            } else {
+			return false;
+			  }
+		    },
+            isCollidedHorizontally: function() {
+			var x = Entity.getX(getPlayerEnt());
+			var z = Entity.getZ(getPlayerEnt());
+			var blockX = Math.round(x - 0.5);
+			var blockZ = Math.round(z - 0.5);
+			while(x < 1) x += 1;
+			while(z < 1) z += 1;
+			while(x > 1) x -= 1;
+			while(z > 1) z -= 1;
+
+			if(Math.round(x * 100) == 31) x -= 0.01;
+			if(Math.round(z * 100) == 31) z -= 0.01;
+			if(Math.round(x * 100) == 69) x += 0.01;
+			if(Math.round(z * 100) == 69) z += 0.01;
+			if(Math.round(x * 100) == 30) blockX--;
+			if(Math.round(z * 100) == 30) blockZ--;
+			if(Math.round(x * 100) == 70) blockX++;
+			if(Math.round(z * 100) == 70) blockZ++;
+			//clientMessage(blockX+";"+blockZ);
+			if(getTile(blockX, Entity.getY(getPlayerEnt()), blockZ) == 0 && getTile(blockX, Entity.getY(getPlayerEnt()) - 1, blockZ) == 0) return false;
+
+			if(Block.getDestroyTime(getTile(blockX, Entity.getY(getPlayerEnt()) - 1, blockZ)) <= 0.1 && Block.getDestroyTime(getTile(blockX, Entity.getY(getPlayerEnt()), blockZ)) <= 0.1) return false;
+
+			if(Math.round(x * 100) == 30 || Math.round(x * 100) == 70) return true;
+			if(Math.round(z * 100) == 30 || Math.round(z * 100) == 70) return true;
+			return false;
+		}
+	}
+};
+function crosshairAimAt(ent, pos) {
+							if(ent != null) {
+				var x = Entity.getX(ent) - getPlayerX();
+				var y = Entity.getY(ent) - getPlayerY();
+				var z = Entity.getZ(ent) - getPlayerZ();
+				if(pos != null && pos instanceof Array) {
+
+					x = Entity.getX(ent) - pos[0];
+					y = Entity.getY(ent) - pos[1];
+					z = Entity.getZ(ent) - pos[2];
+				}
+				if(Entity.getEntityTypeId(ent) != 63)
+					y += 0.5;
+				var a = 0.5 + Entity.getX(ent);
+				var b = Entity.getY(ent);
+				var c = 0.5 + Entity.getZ(ent);
+				var len = Math.sqrt(x * x + y * y + z * z);
+				var y = y / len;
+				var pitch = Math.asin(y);
+				pitch = pitch * 180.0 / Math.PI;
+				pitch = -pitch;
+				var yaw = -Math.atan2(a - (Player.getX() + 0.5), c - (Player.getZ() + 0.5)) * (180 / Math.PI);
+				if(pitch < 89 && pitch > -89) {
+					Entity.setRot(Player.getEntity(), yaw, pitch);
+				}
+			}
+  }
+function toDirectionalVector(vector, yaw, pitch) {
+    vector[0] = Math.cos(yaw) * Math.cos(pitch);
+    vector[1] = Math.sin(pitch);
+    vector[2] = Math.sin(yaw) * Math.cos(pitch);
+}
+     function getNearestEntity(maxrange) {
+			var mobs = Entity.getAll();
+			var players = Server.getAllPlayers();
+			var small = maxrange;
+			var ent = null;
+			for (var i = 0; i < mobs.length; i++) {
+				var x = Entity.getX(mobs[i]) - getPlayerX();
+				var y = Entity.getY(mobs[i]) - getPlayerY();
+				var z = Entity.getZ(mobs[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getEntityTypeId(mobs[i]) <= 63 && Entity.getHealth(mobs[i]) >= 1) {
+					small = dist;
+					ent = mobs[i];
+				}
+			}
+			for (var i = 0; i < players.length; i++) {
+				var x = Entity.getX(players[i]) - getPlayerX();
+				var y = Entity.getY(players[i]) - getPlayerY();
+				var z = Entity.getZ(players[i]) - getPlayerZ();
+				var dist = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2));
+				if (dist < small && dist > 0 && Entity.getHealth(players[i]) >= 1) {
+					small = dist;
+					ent = players[i];
+				}
+			}
+			return ent;
+		}
+
+    function VelToTap(x,y,z)
+ {moveME(getPlayerEnt(),[x+0.5,y+2,z+0.5],0.9); }       
+ function getDis(e1, e2){
+  var xdis = Entity.getX(e1) - e2[0];
+  var ydis = Entity.getY(e1) - e2[1];
+  var zdis = Entity.getZ(e1) - e2[2];
+  var dis = Math.sqrt(xdis*xdis+ydis*ydis+zdis*zdis)
+  return dis;
+}
+ function moveME(ME, target, speed){
+  var xdis = target[0] - Entity.getX(ME);
+  var ydis = target[1] - Entity.getY(ME);
+  var zdis = target[2] - Entity.getZ(ME);
+  var dis = getDis(ME, target);
+  xdis /= dis; ydis /= dis; zdis /= dis;
+  xdis *= speed; ydis *= speed; zdis *= speed;
+  setVelX(ME, xdis);
+  setVelY(ME, ydis);
+  setVelZ(ME, zdis);
+}
+var playerDir = [0, 0, 0];
+var DEG_TO_RAD = Math.PI / 180;
+var playerFlySpeed = 50;
+var falling = 0;
+var next = 0;
+var px, py, pz, lx, ly, lz, vel, saver;
+var cd = 0;
+var s = 0;
+var Xdiff;
+var Zdiff;
+var Xpos;
+var Zpos;
+var can = 1;
+var canGetHP = 1;
+var HP;
+var gravity = -0.07840000092983246;
+var Entities = [];
+var counter = 0;
+var time = 0;
+var time = 2.0;
+var defaultDestroyTime = [
+null, 1.5, 0.6, 0.5, 2, 2, 0, -1, null, null, null, null, 0.5, 0.6, 3, 3, 3, 2, 
+0.2, 0.6, 0.3, 3, 3, null, 0.8, null, 0.2, 0.7, null, null, 4, 0, 0, null, null, 
+0.8, null, 0, 0, 0, 0, 3, 5, 2, 2, 2, 0, 1.5, 2, 50, 0, 0, null, 2, 2.5, null, 
+3, 5, 2.5, 0, 0.6, 3.5, 3.5, 1, 3, 0.4, 0.7, 2, 1, null, null, 5, null, 3, 3, 
+null, null, null, 0.1, 0.5, 0.2, 0.4, 0.6, 0, null, 2, 1, 0.4, 0.3, null, 1, 0.5, 
+null, null, -1, 3, null, 1.5, null, null, 5, 0.3, 1, 0, 0, null, 2, 2, 1.5, null, 
+null, 2, null, 2, null, null, null, null, null, null, null, null, null, null, null, 
+null, null, 0.8, null, null, null, null, null, 2, 2, 2, null, null, 2, null, 0, 0, 
+null, null, null, null, null, null, null, null, null, null, null, null, 0.8, 0.8, 
+2, 2, null, null, null, null, null, null, null, null, null, null, null, 0.5, 0.1, 
+5, null, null, null, null, null, null, null, null, null, null, null, null, null, 
+null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+null, 0, 3.5, 50, 5, 0.6, 0.6, 5, null, null, null, null, 0
+];
+var previousVisualRoadPart=[];
+  var visualRoadTimer=0;
+  function visualRoad()
+  {
+  visualRoadTimer++;
+  if(visualRoadTimer>=5)
+  {
+  visualRoadTimer=0;
+  var x=Math.floor(getPlayerX());
+  var y=Math.floor(getPlayerY());
+  var z=Math.floor(getPlayerZ());
+  for(var i=0;i<previousVisualRoadPart.length;i++)
+  {
+  Level.setTile(previousVisualRoadPart[i][0],previousVisualRoadPart[i][1],previousVisualRoadPart[i][2],0);
+  }
+  previousVisualRoadPart=[];
+  for(var xx=x-1;xx<=x+1;xx++)
+  {
+  for(var zz=z-1;zz<=z+1;zz++)
+  {
+  if(Level.getTile(xx,y-2,zz)==0)
+  {
+  Level.setTile(xx,y-2,zz,20);
+  previousVisualRoadPart.push([xx,y-2,zz]);
+  }
+  }
+  }
+  }
+  }
+var menu = false;
+var klvl = false;
+var kklvl = false;
+function chatHook(text){
+    if(text == "help"){
+        preventDefault();
+        clientMessage("§l»§a1 - Чар на 1000 level (1 раз)")
+        clientMessage("§l»§a2 - Чар на 1000 level (До того пока не написать •2•)")
+}
+if(text=="1"){
+    preventDefault();
+    if(klvl==false){
+        klvl=true;    
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,1000);     Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,1000);      Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.MENDING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FROST_WALKER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,1000);
+}else{
+    klvl=false; 
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,1000);     Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,1000);      Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.MENDING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FROST_WALKER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,1000);
+    }
+}
+if(text=="2"){
+    preventDefault();
+    if(kklvl==false){
+        kklvl=true;
+       
+     }else{
+         kklvl=false;
+        
+         
+    }
+}
+   if(text == "8856"){
+  preventDefault();
+  if(menu == false){
+  menu = true;
+ showMenuBtn();
+  }else{
+  menu = false;
+  showMenuBtn();
+  }}}
+var up = true;  
+var visualroads
+var visualroadss = false; 
+var visualroaded = false; 
+var hitboxs
+var hitboxss = false; 
+var hitboxed = false; 
+var hts
+var htss = false;
+var hted = false;
+var hbs
+var hbss = false;
+var hbed = false;
+var fullbrights
+var fullbightss = false;
+var fullbrighted = false;
+var hastes 
+var hastess = false;
+var hasteed = false;
+var aws
+var awss = false;
+var awed = false; 
+var tpbs
+var tpbss = false;
+var tpbed = false;
+var sps
+var spss = false;
+var sped = false;
+var taptps
+var taptpss = false;
+var taptped = false;
+var safes
+var safess = false;
+var safeed = false;
+var aims
+var aimss = false;
+var aimed = false;
+var derps
+var derpss = false;
+var derped = false;
+var jumps
+var jumpss = false;
+var jumped = false;
+var flys 
+var flyss = false;
+var flyed = false;
+var bbs
+var bbss = false;
+var bbed = false;
+var towers
+var towerss = false;
+var towered = false;
+var akbs
+var akbss = false;
+var akbed = false;
+var btas
+var btass = false;
+var btaed = false;
+var hjs
+var hjss = false;
+var hjed = false;
+var criticals
+var criticalss = false;
+var criticaled = false;
+var tpauras
+var tpaurass = false;
+var tpauraed = false;
+var jesuss
+var jesusss = false;
+var jesused = false;
+var gls
+var glss = false;
+var gled = false;
+var scfs
+var scfss = false;
+var scfed = false;
+var boosts
+var boostss = false;
+var boosted = false;
+var elevators
+var elevatorss = false;
+var elevatored = false;
+var htbs
+var htbss = false;
+var htbed = false;
+var crbs
+var crbss = false;
+var crbed = false;
+var crs
+var crss = false;
+var cred = false;
+var vrds
+var vrdss = false;
+var vrded = false;
+var vrs
+var vrss = false;
+var vred = false;
+var tpts
+var tptss = false;
+var tpted = false;
+var tptbs
+var tptbss = false;
+var tptbed = false;
+var sws
+var swss = false;
+var swed = false;
+var swbs
+var swbss = false;
+var swbed = false;
+var twbs
+var twbss = false;
+var twbed = false;
+var tws
+var twss = false;
+var twed = false;
+var jsbs
+var jsbss = false;
+var jsbed = false;
+var jss
+var jsss = false;
+var jsed = false;
+var spbs
+var spbss = false;
+var spbed = false;
+var spss
+var spsss = false;
+var spsed = false;
+var glbs
+var glbss = false;
+var glbed = false;
+var gl1s
+var gl1ss = false;
+var gl1ed = false;
+var ambs
+var ambss = false;
+var ambed = false;
+var ams 
+var amss = false;
+var amed = false;
+var akbbs
+var akbbss = false;
+var akbbed = false;
+var aks = false;
+var akss = false;
+var aked = false;
+var bbbs 
+var bbbss = false;
+var bbbed = false;
+var bs
+var bss = false;
+var bed = false;
+var qs
+var qss = false;
+var qed = false;
+var qws
+var qwss = false;
+var qwed = false;
+var scfbs
+var scfbss = false;
+var scfbed = false;
+var scfbss 
+var scfbsss = false;
+var scfbsed = false;
+var awbs
+var awbss = false;
+var awbed = false;
+var awss 
+var awsss = false;
+var awsed = false;
+var dbs
+var dbss = false;
+var dbed = false;
+var ddbs
+var ddbss = false;
+var ddbed = false;
+var lngs
+var lngss = false;
+var lnged = false;
+var jtpbs
+var jtpbss = false;
+var jtpbed = false;
+var jtpps
+var jtppss = false;
+var jtpped = false;
+var lbl=[0,-1,0];
+var vtimer=0;
+function dip2px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip3px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip4px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip5px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip6px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip7px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip8px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip9px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip10px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip11px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip12px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip13px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip14px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip15px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip16px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+function dip17px(dips){
+	return Math.ceil(dips * ctx.getResources().getDisplayMetrics().density);
+}
+
+function showMenuBtn() {
+var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		var menuBtn = new Button(ctx);
+		menuBtn.setText(cBtn);
+		menuBtn.setTextColor(android.graphics.Color.GREEN);
+		menuBtn.setBackground(bg);
+		menuBtn.getBackground().setAlpha(100);
+		menuBtn.setOnClickListener(new View.OnClickListener({
+			onClick: function(viewarg){
+				mainMenu100();
+				exit();
+                if(GUIme != null && GUIme.isShowing()) { 
+                GUIme.dismiss();
+                }
+			}
+		}));
+		layout.addView(menuBtn);
+		
+		GUIme = new PopupWindow(layout, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		GUIme.setAnimationStyle(android.R.style.Animation_InputMethod);
+		GUIme.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+		GUIme.showAtLocation(ctx.getWindow().getDecorView(), Gravity.LEFT | Gravity.TOP, 25, 25);
+		}catch(err){
+			Toast.makeText(ctx, "An error occuWHITE: " + err, 1).show();
+		}
+	}}));
+}
+
+function showJumpBtn(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var mLayout = new android.widget.LinearLayout(ctxe);
+    var mButton = new android.widget.Button(ctxe);
+    mButton.setText('J');//Text
+    mButton.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.GREEN));
+    mButton.setTextColor(android.graphics.Color.CYAN);
+    mButton.setTextSize(13);
+		mButton.setBackground(bg3);   	mButton.getBackground().setAlpha(150);
+    mButton.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+    setVelY(getPlayerEnt(), 0.4);	
+    }
+    }));
+    mLayout.addView(mButton);
+    GUIe = new android.widget.PopupWindow(mLayout, dip3px(85), dip3px(40));
+    GUIe.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIe.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 250, 435);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+function showElevatorBtn() {	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		var ElevatorBtn = new Button(ctx);
+			ElevatorBtn.setText("UP");
+ ElevatorBtn.setBackground(bg4);           ElevatorBtn.setTextColor(Color.CYAN);
+		 ElevatorBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));           ElevatorBtn.setBackground(bg5); 
+            ElevatorBtn.setPadding(10,10,10,10);
+			ElevatorBtn.setOnClickListener(new View.OnClickListener({
+				onClick: function(viewarg){
+Entity.setPositionRelative(getPlayerEnt(), 0, 1.8, 0);					
+				}
+			}));
+			layout.addView(ElevatorBtn);
+
+ var elevator = new android.widget.TextView(ctx);
+            elevator.setTextSize(1);
+            elevator.setText(" ");//Title
+           elevator.setTextColor(android.graphics.Color.GREEN); //Color
+            elevator.setGravity(android.view.Gravity.CENTER);
+
+           layout.addView(elevator);
+
+
+
+            var ElevatorBtn = new Button(ctx);
+			ElevatorBtn.setText("DOWN");
+  ElevatorBtn.setTextColor(Color.CYAN);
+			ElevatorBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));          ElevatorBtn.setBackground(bg4); 
+            ElevatorBtn.setPadding(10,10,10,10);
+			ElevatorBtn.setOnClickListener(new View.OnClickListener({
+				onClick: function(viewarg){
+Entity.setPositionRelative(getPlayerEnt(), 0, -1.8, 0);
+				}
+			}));
+			layout.addView(ElevatorBtn);		
+
+	GUIa = new PopupWindow(layout, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+     
+		
+		GUIa.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+		GUIa.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.CENTER, 0, 0);
+		}catch(err){
+			Toast.makeText(ctx, "An error occuWHITE: " + err, 1).show();
+		}
+	}}));
+}
+
+function showFlyBtn() {	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		var FlyBtn = new Button(ctx);
+			FlyBtn.setText("FLY UP");
+ FlyBtn.setBackground(bgfly1);           FlyBtn.setTextColor(Color.CYAN);
+		 FlyBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));           FlyBtn.setBackground(bgfly); 
+            FlyBtn.setPadding(10,10,10,10);
+			FlyBtn.setOnClickListener(new View.OnClickListener({
+				onClick: function(viewarg){
+Entity.setPositionRelative(getPlayerEnt(), 0, 1.8, 0);					
+				}
+			}));
+			layout.addView(FlyBtn);
+
+ var fly = new android.widget.TextView(ctx);
+            fly.setTextSize(1);
+           fly.setText(" ");//Title
+           fly.setTextColor(android.graphics.Color.GREEN); //Color
+            fly.setGravity(android.view.Gravity.CENTER);
+
+           layout.addView(fly);
+
+
+
+            var FlyBtn = new Button(ctx);
+			FlyBtn.setText("FLY DOWN");
+  FlyBtn.setTextColor(Color.CYAN);
+			FlyBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));          FlyBtn.setBackground(bgfly1); 
+            FlyBtn.setPadding(10,10,10,10);
+			FlyBtn.setOnClickListener(new View.OnClickListener({
+				onClick: function(viewarg){
+Entity.setPositionRelative(getPlayerEnt(), 0, -1.8, 0);
+				}
+			}));
+			layout.addView(FlyBtn);		
+
+		GUIz = new PopupWindow(layout, RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+		
+		GUIz.setBackgroundDrawable(new ColorDrawable(Color.DKGRAY));
+		GUIz.showAtLocation(ctx.getWindow().getDecorView(), Gravity.RIGHT | Gravity.CENTER, 0, 0);
+		}catch(err){
+			Toast.makeText(ctx, "An error occuWHITE: " + err, 1).show();
+		}
+	}}));
+}
+
+
+function mainMenu1(){
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var menuLayout = new android.widget.LinearLayout(ctx);
+    var menuScroll = new android.widget.ScrollView(ctx);
+    var menuLayout1 = new android.widget.LinearLayout(ctx);
+    menuLayout.setOrientation(1);
+    menuLayout1.setOrientation(1);
+    menuScroll.addView(menuLayout);
+    menuLayout1.addView(menuScroll);
+            
+   
+    var kek = new android.widget.TextView(ctx);
+    kek.setText('FOV');
+   kek.setTextSize(15);
+   kek.setTextColor(android.graphics.Color.parseColor('#1BFA56'));//Зелёный
+menuLayout.addView(kek);
+
+      var sbpProgress = 0;
+    var sbp = new android.widget.SeekBar(ctx);
+    sbp.setMax(29);
+    sbp.setProgressTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.GREEN));
+     sbp.setBackground(bg94); 
+    sbp.setProgress(sbpProgress);
+    sbp.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener()
+    {
+    onStopTrackingTouch: function(view)
+    {
+    sbpProgress=sbp.getProgress();
+    if(sbpProgress==0)
+    {
+    ModPE.resetFov();
+F('ResetFov')    
+    }
+    if(sbpProgress==1)
+    {
+    ModPE.setFov(10)
+F('10')    
+    }
+    if(sbpProgress==2)
+    {
+    ModPE.setFov(15)
+F('15')   
+    }
+    if(sbpProgress==3)
+    {
+    ModPE.setFov(20)
+    F('20')
+    }
+    if(sbpProgress==4)
+    {
+    ModPE.setFov(25)
+F('25') 
+    }
+    if(sbpProgress==5)
+    {
+    ModPE.setFov(30)
+F('30')
+    }
+    if(sbpProgress==6)
+    {
+    ModPE.setFov(35)
+F('35')
+    }
+    if(sbpProgress==7)
+    {
+    ModPE.setFov(40)
+    F('40')
+    }
+    if(sbpProgress==8)
+    {
+    ModPE.setFov(45)
+F('45')
+    }
+    if(sbpProgress==9)
+    {
+    ModPE.setFov(50)
+F('50')
+    }
+    if(sbpProgress==10)
+    {
+    ModPE.setFov(55)
+F('55')
+    }
+    if(sbpProgress==11)
+    {
+    ModPE.setFov(60)
+F('60')
+    }
+    if(sbpProgress==12)
+    {
+    ModPE.setFov(65)
+F('65')
+    }
+    if(sbpProgress==13)
+    {
+    ModPE.setFov(70)
+F('70')
+    }
+    if(sbpProgress==14)
+    {
+    ModPE.setFov(75)
+F('75')
+    }
+    if(sbpProgress==15)
+    {
+    ModPE.setFov(80)
+F('80') 
+    }      
+    if(sbpProgress==16)
+    {
+    ModPE.setFov(85)
+F('85')
+    }
+    if(sbpProgress==17)
+    {
+    ModPE.setFov(90)
+F('90') 
+    }
+    if(sbpProgress==18)
+    {
+    ModPE.setFov(95)
+F('95')
+    }
+    if(sbpProgress==19)
+    {
+    ModPE.setFov(100)
+F('100')
+    }
+    if(sbpProgress==20)
+    {
+    ModPE.setFov(105)
+F('105')
+    }    
+    if(sbpProgress==21)
+    {
+    ModPE.setFov(110)
+F('110')
+    } 
+    if(sbpProgress==22)   
+    {
+    ModPE.setFov(115)
+    F('115')
+    }    
+    if(sbpProgress==23)
+    {
+    ModPE.setFov(120)
+F('120')
+    } 
+    if(sbpProgress==24)
+    {
+    ModPE.setFov(125)
+    F('125')
+    }    
+    if(sbpProgress==25)
+    {
+    ModPE.setFov(130)
+    F('130')
+     }
+    if(sbpProgress==26)
+    {
+    ModPE.setFov(135)
+    F('135')
+       }    
+    if(sbpProgress==27)
+    {
+    ModPE.setFov(140)
+    F('140')
+       }         
+    if(sbpProgress==28)
+    {
+    ModPE.setFov(145)
+ F('145') 
+    }
+    if(sbpProgress==29)
+    {
+    ModPE.setFov(150)
+F('150')
+    }
+    }
+    });
+    menuLayout.addView(sbp);
+
+var lol = new android.widget.TextView(ctx);
+    lol.setText('Combat');
+   lol.setTextSize(15);
+   lol.setTextColor(android.graphics.Color.RED);
+lol.setGravity(android.view.Gravity.CENTER);
+menuLayout.addView(lol);
+
+var aims = new Switch(ctx);
+      aims.setText("HitBoost");
+     aims.setTextColor(android.graphics.Color.RED);
+      aims.setPadding(10, 3, 3, 3);
+      aims.setTextSize(10);
+      aims.setChecked(aimed);
+aims.setBackground(lc);  
+      aims.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!aimed){
+   D("HitBoost enabled!")
+      aimss = true;
+      aimed = true;
+      }else{
+    X('HitBoost disabled!')
+      aimss = false;
+      aimed = false;
+      }
+      aims.setChecked(aimed);
+      }
+      }));
+      menuLayout.addView(aims);
+      
+      var olr = new android.widget.TextView(ctx);
+            olr.setTextSize(2);
+            olr. setText(" ");//Title
+           olr. setTextColor(android.graphics.Color.RED); //Color
+            olr.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(olr);
+
+var hitboxs = new Switch(ctx);
+      hitboxs.setText("Hitbox");
+      hitboxs.setTextColor(android.graphics.Color.RED);
+      hitboxs.setPadding(10, 3, 3, 3);
+      hitboxs.setTextSize(10);
+      hitboxs.setChecked(hitboxed);
+hitboxs.setBackground(h2);  
+      hitboxs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!hitboxed){
+   D("Hitbox enabled!")
+      hitboxss = true;
+      hitboxed = true;
+      }else{
+    X('Hitbox disabled!')
+      hitboxss = false;
+      hitboxed = false;
+      }
+      hitboxs.setChecked(hitboxed);
+      }
+      }));
+      menuLayout.addView(hitboxs);
+      
+      var or = new android.widget.TextView(ctx);
+            or.setTextSize(2);
+            or. setText(" ");//Title
+           or. setTextColor(android.graphics.Color.RED); //Color
+            or.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(or);
+
+      var criticals = new Switch(ctx);
+      criticals.setText("Critical");
+      criticals.setTextColor(android.graphics.Color.RED);
+      criticals.setPadding(10, 3, 3, 3);
+      criticals.setTextSize(10);
+      criticals.setChecked(criticaled);
+criticals.setBackground(cr);  
+    criticals.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!criticaled){
+   D("Critical enabled!")
+      criticalss = true;
+      criticaled = true;
+      }else{
+    X('Critical disabled!')
+      criticalss = false;
+      criticaled = false;
+      }
+      criticals.setChecked(criticaled);
+      }
+      }));
+      menuLayout.addView(criticals);           
+
+var ggj = new android.widget.TextView(ctx);
+            ggj.setTextSize(2);
+            ggj.setText(" ");//Title
+           ggj.setTextColor(android.graphics.Color.RED); //Color
+            ggj.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(ggj)      
+  
+      var tpauras = new Switch(ctx);
+      tpauras.setText("TpAura");
+      tpauras.setTextColor(android.graphics.Color.RED);
+      tpauras.setPadding(10, 3, 3, 3);
+      tpauras.setTextSize(10);
+      tpauras.setChecked(tpauraed);
+tpauras.setBackground(t3);  
+     tpauras.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!tpauraed){
+   D("TpAura enabled!")
+      tpaurass = true;
+      tpauraed = true;
+      }else{
+    X('TpAura disabled!')
+      tpaurass = false;
+      tpauraed = false;
+      }
+      tpauras.setChecked(tpauraed);
+      }
+      }));
+      menuLayout.addView(tpauras);
+ 
+var l = new android.widget.TextView(ctx);
+            l.setTextSize(15);
+            l.setText("Movement");//Title
+           l.setTextColor(android.graphics.Color.CYAN); //Color
+            l.setGravity(android.view.Gravity.CENTER);
+            menuLayout.addView(l) 
+      
+var qwg = new android.widget.TextView(ctx);
+            qwg.setTextSize(2);
+            qwg.setText(" ");//Title
+           qwg.setTextColor(android.graphics.Color.RED); //Color
+            qwg.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qwg);
+           
+     var visualroads = new Switch(ctx);
+      visualroads.setText("VisualRoad");
+      visualroads.setTextColor(android.graphics.Color.CYAN);
+      visualroads.setPadding(10, 3, 3, 3);
+      visualroads.setTextSize(10);
+      visualroads.setChecked(visualroaded);
+visualroads.setBackground(vr);  
+      visualroads.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!visualroaded){
+   D("VisualRoad enabled!")
+      visualroadss = true;
+      visualroaded = true;
+      }else{
+    X('VisualRoad disabled!')
+      visualroadss = false;
+      visualroaded = false;
+      }
+      visualroads.setChecked(visualroaded);
+      }
+      }));
+      menuLayout.addView(visualroads);
+      
+      var cn = new android.widget.TextView(ctx);
+            cn.setTextSize(2);
+            cn. setText(" ");//Title
+           cn.setTextColor(android.graphics.Color.RED); //Color
+            cn.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(cn);
+      
+              var taptps = new Switch(ctx);
+      taptps.setText("TapTp");
+      taptps.setTextColor(android.graphics.Color.CYAN);
+      taptps.setPadding(10, 3, 3, 3);
+      taptps.setTextSize(10);
+      taptps.setChecked(taptped);
+taptps.setBackground(t);   taptps.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!taptped){
+   D("TapTp enabled!")
+      taptpss = true;
+      taptped = true;
+      }else{
+    X('TapTp disabled!')
+      taptpss = false;
+      taptped = false;
+      }
+      taptps.setChecked(taptped);
+      }
+      }));
+      menuLayout.addView(taptps);
+      
+      var ha = new android.widget.TextView(ctx);
+            ha.setTextSize(2);
+            ha.setText(" ");//Title
+           ha.setTextColor(android.graphics.Color.RED); //Color
+            ha.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(ha);
+      
+           var safes = new Switch(ctx);
+      safes.setText("Safewalk");
+      safes.setTextColor(android.graphics.Color.CYAN);
+      safes.setPadding(10, 3, 3, 3);
+      safes.setTextSize(10);
+      safes.setChecked(safeed);
+safes.setBackground(safe);  
+      safes.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!safeed){
+   D("Safewalk enabled!")
+      safess = true;
+      safeed = true;
+      }else{
+    X('Safewalk disabled!')
+      safess = false;
+      safeed = false;
+      }
+      safes.setChecked(safeed);
+      }
+      }));
+      menuLayout.addView(safes);
+      
+      var mz = new android.widget.TextView(ctx);
+            mz.setTextSize(2);
+            mz.setText(" ");//Title
+           mz.setTextColor(android.graphics.Color.RED); //Color
+            mz.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(mz);
+            
+           var towers = new Switch(ctx);
+      towers.setText("Tower");
+      towers.setTextColor(android.graphics.Color.CYAN);
+      towers.setPadding(10, 3, 3, 3);
+      towers.setTextSize(10);
+      towers.setChecked(towered);towers.setBackground(t2);  
+      towers.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!towered){
+   D("Tower enabled!")
+      towerss = true;
+      towered = true;
+      }else{
+    X('Tower disabled!')
+      towerss = false;
+      towered = false;
+      }
+      towers.setChecked(towered);
+      }
+      }));
+      menuLayout.addView(towers);
+      
+      var mzx = new android.widget.TextView(ctx);
+            mzx.setTextSize(2);
+            mzx.setText(" ");//Title
+           mzx.setTextColor(android.graphics.Color.RED); //Color
+            mzx.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(mzx)
+             
+ var jumps = new Switch(ctx);
+      jumps.setText("AirJump");
+      jumps.setTextColor(android.graphics.Color.CYAN);
+      jumps.setPadding(10, 3, 3, 3);
+      jumps.setTextSize(10);
+      jumps.setChecked(jumped);
+jumps.setBackground(j);  
+      jumps.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!jumped){
+    D('AirJump enabled!')
+    showJumpBtn();
+      jumpss = true;
+      jumped = true;
+      }else{
+    if(GUIe != null && GUIe.isShowing()) { 
+                GUIe.dismiss();
+                }
+    X('AirJump disabled!')
+      jumpss = false;
+      jumped = false;      
+      }
+      jumps.setChecked(jumped);
+      }
+      }));
+      menuLayout.addView(jumps);
+      
+var qall = new android.widget.TextView(ctx);
+            qall.setTextSize(2);
+            qall.setText(" ");//Title
+           qall.setTextColor(android.graphics.Color.RED); //Color
+            qall.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qall)  
+
+var elevators = new Switch(ctx);
+      elevators.setText("Elevator");
+      elevators.setTextColor(android.graphics.Color.CYAN);
+      elevators.setPadding(10, 3, 3, 3);
+      elevators.setTextSize(10);
+      elevators.setChecked(elevatored);
+elevators.setBackground(el);  
+      elevators.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!elevatored){
+    D('Elevator enabled!')
+    showElevatorBtn();
+      elevatorss = true;
+      elevatored = true;
+      }else{
+    if(GUIa != null && GUIa.isShowing()) { 
+                GUIa.dismiss();
+                }
+    X('Elevator disabled!')
+      elevatorss = false;
+      elevatored = false;      
+      }
+      elevators.setChecked(elevatored);
+      }
+      }));
+      menuLayout.addView(elevators);
+      
+var qallz = new android.widget.TextView(ctx);
+            qallz.setTextSize(2);
+            qallz.setText(" ");//Title
+           qallz.setTextColor(android.graphics.Color.RED); //Color
+            qallz.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qallz)  
+
+ var flys = new Switch(ctx);
+      flys.setText("Fly");
+      flys.setTextColor(android.graphics.Color.CYAN);
+      flys.setPadding(10, 3, 3, 3);
+      flys.setTextSize(10);
+      flys.setChecked(flyed);
+flys.setBackground(fl);  
+      flys.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!flyed){
+    D('Fly enabled!')
+    showFlyBtn();
+      flyss = true;
+      flyed = true;
+      }else{
+    if(GUIz != null && GUIz.isShowing()) { 
+                GUIz.dismiss();
+                }
+    X('Fly disabled!')
+      flyss = false;
+      flyed = false;      
+      }
+      flys.setChecked(flyed);
+      }
+      }));
+      menuLayout.addView(flys);
+
+var qallf = new android.widget.TextView(ctx);
+            qallf.setTextSize(2);
+            qallf.setText(" ");//Title
+           qallf.setTextColor(android.graphics.Color.RED); //Color
+            qallf.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qallf)  
+      
+var jesuss = new Switch(ctx);
+      jesuss.setText("Jesus");
+      jesuss.setTextColor(android.graphics.Color.CYAN);
+      jesuss.setPadding(10, 3, 3, 3);
+      jesuss.setTextSize(10);
+      jesuss.setChecked(jesused);
+jesuss.setBackground(j2);  
+     jesuss.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!jesused){
+   D("Jesus enabled!")
+      jesusss = true;
+      jesused = true;
+      }else{
+    X('Jesus disabled!')
+      jesusss = false;
+      jesused = false;
+      }
+      jesuss.setChecked(jesused);
+      }
+      }));
+      menuLayout.addView(jesuss);
+
+var qallq = new android.widget.TextView(ctx);
+            qallq.setTextSize(2);
+            qallq.setText(" ");//Title
+           qallq.setTextColor(android.graphics.Color.RED); //Color
+            qallq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qallq)  
+      
+var sps = new Switch(ctx);
+      sps.setText("SpeedHack");
+      sps.setTextColor(android.graphics.Color.CYAN);
+      sps.setPadding(10, 3, 3, 3);
+      sps.setTextSize(10);
+      sps.setChecked(sped);
+sps.setBackground(sp);  
+     sps.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!sped){
+   D("SpeedHack enabled!")
+      spss = true;
+      sped = true;
+      }else{
+    X('SpeedHack disabled!')
+      spss = false;
+      sped = false;
+      }
+      sps.setChecked(sped);
+      }
+      }));
+      menuLayout.addView(sps);
+
+var qallq = new android.widget.TextView(ctx);
+            qallq.setTextSize(2);
+            qallq.setText(" ");//Title
+           qallq.setTextColor(android.graphics.Color.RED); //Color
+            qallq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qallq)  
+      
+var gls = new Switch(ctx);
+      gls.setText("Glide");
+      gls.setTextColor(android.graphics.Color.CYAN);
+      gls.setPadding(10, 3, 3, 3);
+      gls.setTextSize(10);
+      gls.setChecked(gled);
+gls.setBackground(fe);  
+     gls.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!gled){
+   D("Glide enabled!")
+      glss = true;
+      gled = true;
+      }else{
+    X('Glide disabled!')
+      glss = false;
+      gled = false;
+      }
+      gls.setChecked(gled);
+      }
+      }));
+      menuLayout.addView(gls);
+
+var qalkq = new android.widget.TextView(ctx);
+            qalkq.setTextSize(15);
+            qalkq.setText("Player");//Title
+           qalkq.setTextColor(android.graphics.Color.GREEN); //Color
+            qalkq.setGravity(android.view.Gravity.CENTER);
+            menuLayout.addView(qalkq)  
+
+var akbs = new Switch(ctx);
+      akbs.setText("AntiKnockBack");
+      akbs.setTextColor(android.graphics.Color.GREEN);
+      akbs.setPadding(10, 3, 3, 3);
+      akbs.setTextSize(10);
+      akbs.setChecked(akbed);
+akbs.setBackground(akb);  
+      akbs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!akbed){
+   D("AntiKnockBack enabled!")
+      akbss = true;
+      akbed = true;
+      }else{
+    X('AntiKnockBack disabled!')
+      akbss = false;
+      akbed = false;
+      }
+      akbs.setChecked(akbed);
+      }
+      }));
+      menuLayout.addView(akbs);     
+      
+      var ggq = new android.widget.TextView(ctx);
+            ggq.setTextSize(2);
+            ggq.setText(" ");//Title
+           ggq.setTextColor(android.graphics.Color.RED); //Color
+            ggq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(ggq)      
+
+      
+     var fullbrights = new Switch(ctx);
+      fullbrights.setText("FullBright");
+      fullbrights.setTextColor(android.graphics.Color.GREEN);
+      fullbrights.setPadding(10, 3, 3, 3);
+      fullbrights.setTextSize(10);
+fullbrights.setBackground(bg914);        fullbrights.setChecked(fullbrighted); fullbrights.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!fullbrighted){
+    D('Вы успешно получили эффект!')
+      effect=true;
+      fullbrightss = true;
+      fullbrighted = true;
+      }else{
+   
+    X('Вы успешно удалили эффект!')
+      fullbrightss = false;
+      fullbrighted = false;
+      Entity.removeEffect(Player.getEntity (), 16);
+      }
+      fullbrights.setChecked(fullbrighted);
+      }
+      }));
+      menuLayout.addView(fullbrights);
+
+var ol = new android.widget.TextView(ctx);
+            ol.setTextSize(2);
+            ol.setText(" ");//Title
+           ol.setTextColor(android.graphics.Color.RED); //Color
+            ol.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(ol);
+            
+     var hastes = new Switch(ctx);
+      hastes.setText("Haste");
+      hastes.setTextColor(android.graphics.Color.GREEN);
+      hastes.setPadding(10, 3, 3, 3);
+      hastes.setTextSize(10);
+      hastes.setChecked(hasteed);
+hastes.setBackground(h);  
+      hastes.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!hasteed){
+   D("Вы успешно получили эффект!")
+      effect=true;
+      hastess = true;
+      hasteed = true;
+      }else{
+    Entity.removeEffect(Player.getEntity (), 3);
+    X('Вы успешно удалили эффект!')
+      hastess = false;
+      hasteed = false;
+      }
+      hastes.setChecked(hasteed);
+      }
+      }));
+      menuLayout.addView(hastes);
+      
+      var gygq = new android.widget.TextView(ctx);
+            gygq.setTextSize(2);
+            gygq.setText(" ");//Title
+           gygq.setTextColor(android.graphics.Color.RED); //Color
+            gygq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(gygq)      
+                      
+var boosts = new Switch(ctx);
+      boosts.setText("TapVelocity");
+      boosts.setTextColor(android.graphics.Color.GREEN);
+      boosts.setPadding(10, 3, 3, 3);
+      boosts.setTextSize(10);
+      boosts.setChecked(boosted);
+boosts.setBackground(zmm);  
+     boosts.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!boosted){
+   D("TapVelocity enabled!")
+      boostss = true;
+      boosted = true;
+      }else{
+    X('TapVelocity disabled!')
+      boostss = false;
+      boosted = false;
+      }
+      boosts.setChecked(boosted);
+      }
+      }));
+      menuLayout.addView(boosts);
+
+
+var qalkq = new android.widget.TextView(ctx);
+            qalkq.setTextSize(2);
+            qalkq.setText(" ");//Title
+           qalkq.setTextColor(android.graphics.Color.RED); //Color
+            qalkq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qalkq)  
+      
+var bbs = new Switch(ctx);
+      bbs.setText("BedBreaker");
+      bbs.setTextColor(android.graphics.Color.GREEN);
+      bbs.setPadding(10, 3, 3, 3);
+      bbs.setTextSize(10);
+      bbs.setChecked(bbed);
+bbs.setBackground(bb);  
+     bbs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!bbed){
+   D("BedBreaker enabled!")
+      bbss = true;
+      bbed = true;
+      }else{
+    X('BedBreaker disabled!')
+      bbss = false;
+      bbed = false;
+      }
+      bbs.setChecked(bbed);
+      }
+      }));
+      menuLayout.addView(bbs);
+
+var qalkq = new android.widget.TextView(ctx);
+            qalkq.setTextSize(2);
+            qalkq.setText(" ");//Title
+           qalkq.setTextColor(android.graphics.Color.RED); //Color
+            qalkq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qalkq)  
+      
+var hjs = new Switch(ctx);
+      hjs.setText("HighJump");
+      hjs.setTextColor(android.graphics.Color.GREEN);
+      hjs.setPadding(10, 3, 3, 3);
+      hjs.setTextSize(10);
+      hjs.setChecked(hjed);
+hjs.setBackground(fs);  
+     hjs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!hjed){
+   D("HighJump enabled!")
+      hjss = true;
+      hjed = true;
+      }else{
+    X('HighJump disabled!')
+      hjss = false;
+      hjed = false;
+      }
+      hjs.setChecked(hjed);
+      }
+      }));
+      menuLayout.addView(hjs);                          
+
+var qlqa = new android.widget.TextView(ctx);
+            qlqa.setTextSize(2);
+            qlqa.setText(" ");//Title
+qlqa.setTextColor(android.graphics.Color.RED); //Color
+            qlqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qlqa)    
+
+var scfs = new Switch(ctx);
+      scfs.setText("Scaffold");
+      scfs.setTextColor(android.graphics.Color.GREEN);
+      scfs.setPadding(10, 3, 3, 3);
+      scfs.setTextSize(10);
+      scfs.setChecked(scfed);
+scfs.setBackground(bgh);  
+     scfs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!scfed){
+   D("Scaffold enabled!")
+      scfss = true;
+      scfed = true;
+      }else{
+    X('Scaffold disabled!')
+      scfss = false;
+      scfed = false;
+      }
+      scfs.setChecked(scfed);
+      }
+      }));
+      menuLayout.addView(scfs);
+      
+      var lqlqa = new android.widget.TextView(ctx);
+            lqlqa.setTextSize(2);
+            lqlqa.setText(" ");//Title
+lqlqa.setTextColor(android.graphics.Color.RED); //Color
+            lqlqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(lqlqa)    
+
+var aws = new Switch(ctx);
+      aws.setText("Autowalk");
+      aws.setTextColor(android.graphics.Color.GREEN);
+      aws.setPadding(10, 3, 3, 3);
+     aws.setTextSize(10);
+      aws.setChecked(awed);
+aws.setBackground(aw);  
+     aws.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!awed){
+   D("Autowalk enabled!")
+      awss = true;
+      awed = true;
+      }else{
+    X('Autowalk disabled!')
+      awss = false;
+      awed = false;
+      }
+      aws.setChecked(awed);
+      }
+      }));
+      menuLayout.addView(aws);
+      
+ var qlpqa = new android.widget.TextView(ctx);
+            qlpqa.setTextSize(2);
+            qlpqa.setText(" ");//Title
+qlpqa.setTextColor(android.graphics.Color.RED); //Color
+            qlpqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qlpqa)    
+      
+      var derps = new Switch(ctx);
+      derps.setText("Derp");
+      derps.setTextColor(android.graphics.Color.GREEN);
+     derps.setPadding(10, 3, 3, 3);
+    derps.setTextSize(10);
+      derps.setChecked(derped);
+derps.setBackground(drp);  
+     derps.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!derped){
+      derpss = true;
+      derped = true;
+      D('Derp enabled!')
+      }else{
+      derpss = false;
+      derped = false;
+      D('Derp disabled!')
+      }
+      derps.setChecked(derped);
+      }
+      }));
+      menuLayout.addView(derps);
+ 
+ var qlpqa = new android.widget.TextView(ctx);
+            qlpqa.setTextSize(2);
+            qlpqa.setText(" ");//Title
+qlpqa.setTextColor(android.graphics.Color.RED); //Color
+            qlpqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qlpqa)    
+      
+      var lngs = new Switch(ctx);
+      lngs.setText("JetPack");
+      lngs.setTextColor(android.graphics.Color.GREEN);
+     lngs.setPadding(10, 3, 3, 3);
+    lngs.setTextSize(10);
+      lngs.setChecked(lnged);
+lngs.setBackground(drp);  
+    lngs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!lnged){
+     lngss = true;
+      lnged = true;
+      D('JetPack enabled!')
+      }else{
+      lngss = false;
+      lnged = false;
+      D('JetPack disabled!')
+      }
+      lngs.setChecked(lnged);
+      }
+      }));
+      menuLayout.addView(lngs);
+        //More buttons...
+    menu1 = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/5, ctx.getWindowManager().getDefaultDisplay().getHeight()/2);
+    menu1.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+    menu1.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+    }catch(error){
+ D('Код не трогай блэт: ' + error);
+    }
+    }}));
+    }
+    //Exit button
+function exit(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var xLayout = new android.widget.LinearLayout(ctxe);
+    var xButton = new android.widget.Button(ctxe);
+    xButton.setText('EXIT');//Text
+    xButton.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    xButton.setTextColor(android.graphics.Color.GREEN);
+    xButton.setTextSize(15);
+		 xButton.setBackground(xbg)
+			xButton.getBackground().setAlpha(150);
+    xButton.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+    exitlel.dismiss(); //Close
+    menu100.dismiss(); //Close
+    showMenuBtn();
+    }
+    }));
+    xLayout.addView(xButton);
+    exitlel = new android.widget.PopupWindow(xLayout, dip2px(40), dip2px(40));
+    exitlel.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    exitlel.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 900);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+function exit3(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var wLayout = new android.widget.LinearLayout(ctxe);
+    var wButton = new android.widget.Button(ctxe);
+    wButton.setText('EXIT');//Text
+    wButton.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    wButton.setTextColor(android.graphics.Color.GREEN);
+    wButton.setTextSize(15);
+		 wButton.setBackground(xbg)
+			wButton.getBackground().setAlpha(150);
+    wButton.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+    exitqel.dismiss(); //Close
+    menulell.dismiss(); //Close
+    mainMenu100();
+    exit();
+    }
+    }));
+    wLayout.addView(wButton);
+    exitqel = new android.widget.PopupWindow(wLayout, dip6px(40), dip6px(40));
+    exitqel.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    exitqel.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 900);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+    
+function exitb(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var bindLayout = new android.widget.LinearLayout(ctxe);
+    var bindButton = new android.widget.Button(ctxe);
+    bindButton.setText('EXIT');//Text
+    bindButton.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    bindButton.setTextColor(android.graphics.Color.GREEN);
+    bindButton.setTextSize(15);
+		 bindButton.setBackground(xbg)
+			bindButton.getBackground().setAlpha(150);
+    bindButton.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+    exitbind.dismiss(); //Close
+    menubind.dismiss(); //Close
+    mainMenu100();
+    exit();
+    }
+    }));
+    bindLayout.addView(bindButton);
+    exitbind = new android.widget.PopupWindow(bindLayout, dip8px(40), dip8px(40));
+    exitbind.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    exitbind.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 900);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+    function exit1(){
+    var ctxe = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctxe.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var pLayout = new android.widget.LinearLayout(ctxe);
+    var pButton = new android.widget.Button(ctxe);
+    pButton.setText('EXIT');//Text
+    pButton.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    pButton.setTextColor(android.graphics.Color.GREEN);
+    pButton.setTextSize(15);
+		 pButton.setBackground(pbg)
+			pButton.getBackground().setAlpha(150);
+    pButton.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+    exitUI1.dismiss(); //Close
+    menu1.dismiss(); //Close
+   mainMenu100();
+				exit();
+    }
+    }));
+    pLayout.addView(pButton);
+    exitUI1 = new android.widget.PopupWindow(pLayout, dip5px(40), dip5px(40));
+    exitUI1.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    exitUI1.showAtLocation(ctxe.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 900);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+    
+function modTick(){
+var curspeed = Math.sqrt(Math.pow(Entity.getVelX(getPlayerEnt()), 2) + Math.pow(Entity.getVelZ(getPlayerEnt()), 2));
+if(visualroaded==true){
+visualRoad();
+}
+
+var px = Player.getX();
+var py = Player.getY();
+var pz = Player.getZ();
+var x = Player.getX();
+var y = Player.getY();
+var z = Player.getZ();
+
+if(hjed==true){
+    if(up)
+if(Entity.getVelY(Player.getEntity()) >= 0.2)
+{
+setVelY(getPlayerEnt(),0.6)
+up = false;
+}
+if(Entity.getVelY(Player.getEntity()) < -0.2)
+{
+up = true; 
+}
+}
+if(hitboxed==true) {
+Entity.setCollisionSize(Player.getPointedEntity(), 25, 10);
+}
+if(awed==true){
+    var playerDir = [0, 0, 0];
+        toDirectionalVector(playerDir, (getYaw() + 90) * Math.PI / 180, getPitch() * Math.PI / 180 * -1);
+        setVelX(getPlayerEnt(), 0.2 * playerDir[0]);
+        setVelZ(getPlayerEnt(), 0.2 * playerDir[2]);
+}
+if(hitboxed==false){
+Entity.setCollisionSize(Player.getPointedEntity(), 1, 2);
+}
+if(safeed==true){
+Entity.setSneaking(getPlayerEnt(), true);
+}
+if(sped==true){
+    if(getTile(getPlayerX(), getPlayerY() - 3, getPlayerZ()) != 0){
+  if(curspeed > 0.15){
+  setVelX(getPlayerEnt(), Entity.getVelX(getPlayerEnt())*1.26);
+  setVelZ(getPlayerEnt(), Entity.getVelZ(getPlayerEnt())*1.26);
+  }}}
+if(flyed==true){
+setVelY(getPlayerEnt(), 0);
+}
+if(gled==true){
+    setVelY(getPlayerEnt(), 0.00000000000);
+}
+if(fullbrighted==true){
+Entity.addEffect(getPlayerEnt(), 16, 999999*20, 100, true, false);
+}
+if(hasteed==true){
+Entity.addEffect(getPlayerEnt(), 3, 999999*20, 100, true, false);
+}
+if(jesused==true){
+if(Utils.Player.isInWater())
+setVelY(getPlayerEnt(), 0.2);
+if(Utils.Player.isInWater())
+setVelX(getPlayerEnt(), Entity.getVelX(getPlayerEnt())*1.08);
+if(Utils.Player.isInWater())
+setVelZ(getPlayerEnt(), Entity.getVelZ(getPlayerEnt())*1.08);
+   }
+				  if (akbss || Entity.getHealth(getPlayerEnt()) <= 0) {
+		   if(this.tick > 0) {
+           tick--;
+		} else {
+			Entity.setImmobile(getPlayerEnt(), false);
+		}
+		if(this.health > Entity.getHealth(getPlayerEnt())){
+			Entity.setImmobile(getPlayerEnt(), true);
+			this.tick = 1;
+		}
+		this.tick = 0;
+		this.health = Entity.getHealth(getPlayerEnt());
+	}
+
+if(derped==true){
+        var player = getPlayerEnt();
+    var yaw = Math.floor(Entity.getYaw(player));
+  var pitch = Math.floor(Entity.getPitch(player));
+  Entity.setRot(player, yaw +30, pitch)
+}
+if(kklvl==true){
+    
+Player.enchant(Player.getSelectedSlotId(), Enchantment.EFFICIENCY,1000);     Player.enchant(Player.getSelectedSlotId(), Enchantment.INFINITY,1000);      Player.enchant(Player.getSelectedSlotId(), Enchantment.SMITE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.DEPTH_STRIDER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_ASPECT,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FORTUNE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FLAME,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SHARPNESS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LOOTING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.KNOCKBACK,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.UNBREAKING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.THORNS,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BLAST_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FEATHER_FALLING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.SILK_TOUCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FIRE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PUNCH,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.POWER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.RESPIRATION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LUCK_OF_THE_SEA,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROJECTILE_PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.PROTECTION,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.MENDING,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.LURE,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.FROST_WALKER,1000);
+Player.enchant(Player.getSelectedSlotId(), Enchantment.BANE_OF_ARTHROPODS,1000);
+}
+if(lnged==true){
+  var hit = getYaw() + 90;
+        var hitY = getPitch() - 180;
+        x = Math.cos(hit * (Math.PI / 180));
+        y = Math.sin(hitY * (Math.PI / 180));
+        z = Math.sin(hit * (Math.PI / 180));
+        setVelX(Player.getEntity(), x * 1);
+        setVelY(Player.getEntity(), y * 1);
+        setVelZ(Player.getEntity(), z * 1);
+ 
+}
+}
+function useItem(x, y, z, itemid, blockid, side, itemDamage, blockDamage) {
+if(taptped==true){
+    setPosition(getPlayerEnt(), Player.getPointedBlockX(), Player.getPointedBlockY() + 3.0, Player.getPointedBlockZ())
+    }
+    if(bbed==true){
+        Block.setDestroyTime(26, 0.0);
+    }
+if(towered==true){
+setVelY(getPlayerEnt(), 0.45);
+}
+if(boosted==true){
+    VelToTap(x,y,z)
+}
+if(scfed==true){
+  if(side == BlockFace.NORTH) {
+			Entity.setPositionRelative(getPlayerEnt(), 0, 0, -1);
+			} else if(side == BlockFace.SOUTH) {
+		    Entity.setPositionRelative(getPlayerEnt(), 0, 0, 1);
+			} else if(side == BlockFace.WEST) {
+		    Entity.setPositionRelative(getPlayerEnt(), -1, 0, 0);
+			} else if(side == BlockFace.EAST) {
+			Entity.setPositionRelative(getPlayerEnt(), 1, 0, 0);
+			} else if(side == BlockFace.UP) {
+			Entity.setPositionRelative(getPlayerEnt(), 0, 1, 0);
+}
+}  
+}
+function attackHook(attacker, victim){
+if(criticaled==true){   
+setVelY(getPlayerEnt(), 0.25);
+}
+if(tpauraed==true){
+setPosition(getPlayerEnt(), Entity.getX(victim), Entity.getY(victim) + 2, Entity.getZ(victim))
+ }
+ if(aimed==true){
+  var pitch = ((Entity.getPitch(getPlayerEnt()) + 90) * Math.PI)/180;
+  var yaw = ((Entity.getYaw(getPlayerEnt()) + 90) * Math.PI)/180;
+  var X = Math.sin(pitch) * Math.cos(yaw);
+  var Y = Math.cos(pitch);
+  var Z = Math.sin(pitch) * Math.sin(yaw);
+  setVelX(getPlayerEnt(),X*1.5);
+  setVelY(getPlayerEnt(),Y*1.5);
+  setVelZ(getPlayerEnt(),Z*1.5);
+  }}
+
+function D(text, showPrefix) {
+	try {
+		var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+		ctx.runOnUiThread(new java.lang.Runnable({
+			run: function () {
+				var thetoast = android.widget.Toast.makeText(com.mojang.minecraftpe.MainActivity.currentMainActivity.get(), "" + text, android.widget.Toast.LENGTH_LONG);
+				var layout = new android.widget.LinearLayout(ctx);
+				var msg = new android.widget.TextView(ctx);
+				if(showPrefix == null) { 
+                text = "Xidan: " + text;
+				} else { 
+                text = showPrefix + ": " + text;
+                }
+				msg.setText(text);
+				msg.setGravity(android.view.Gravity.CENTER);
+				msg.setTextSize(15);
+				msg.setPadding(10, 10, 10, 10);
+				msg.setTextColor(android.graphics.Color.WHITE);
+				
+				var btnpic = new android.graphics.drawable.GradientDrawable();
+				btnpic.setColor(android.graphics.Color.BLACK);
+				btnpic.setStroke(5, android.graphics.Color.GREEN);
+				
+				layout.addView(msg);
+				layout.setBackground(btnpic);
+				layout.getBackground().setAlpha(150);
+				thetoast.setView(layout);
+				thetoast.show();
+			}
+		}));
+	} catch(e) {
+		print(e);
+	}
+}
+
+function F(text, showPrefix) {
+	try {
+		var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+		ctx.runOnUiThread(new java.lang.Runnable({
+			run: function () {
+				var thetoast = android.widget.Toast.makeText(com.mojang.minecraftpe.MainActivity.currentMainActivity.get(), "" + text, android.widget.Toast.LENGTH_LONG);
+				var layout = new android.widget.LinearLayout(ctx);
+				var msg = new android.widget.TextView(ctx);
+				if(showPrefix == null) { 
+                text = "SetFov: " + text;
+				} else { 
+                text = showPrefix + ": " + text;
+                }
+				msg.setText(text);
+				msg.setGravity(android.view.Gravity.CENTER);
+				msg.setTextSize(15);
+				msg.setPadding(10, 10, 10, 10);
+				msg.setTextColor(android.graphics.Color.BLACK);
+				
+				var btnpic = new android.graphics.drawable.GradientDrawable();
+				btnpic.setColor(android.graphics.Color.GREEN);
+				btnpic.setStroke(5, android.graphics.Color.BLACK);
+				
+				layout.addView(msg);
+				layout.setBackground(btnpic);
+				layout.getBackground().setAlpha(150);
+				thetoast.setView(layout);
+				thetoast.show();
+			}
+		}));
+	} catch(e) {
+		print(e);
+	}
+}
+
+function L(text, showPrefix) {
+	try {
+		var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+		ctx.runOnUiThread(new java.lang.Runnable({
+			run: function () {
+				var thetoast = android.widget.Toast.makeText(com.mojang.minecraftpe.MainActivity.currentMainActivity.get(), "" + text, android.widget.Toast.LENGTH_LONG);
+				var layout = new android.widget.LinearLayout(ctx);
+				var msg = new android.widget.TextView(ctx);
+				if(showPrefix == null) { 
+                text = " " + text;
+				} else { 
+                text = showPrefix + " " + text;
+                }
+				msg.setText(text);
+		msg.setGravity(android.view.Gravity.CENTER);
+				msg.setTextSize(15);
+				msg.setPadding(10, 10, 10, 10);
+				msg.setTextColor(android.graphics.Color.WHITE);
+				
+				var btnpic = new android.graphics.drawable.GradientDrawable();
+				btnpic.setColor(android.graphics.Color.BLACK);
+				btnpic.setStroke(5, android.graphics.Color.GREEN);
+				
+				layout.addView(msg);
+				layout.setBackground(btnpic);
+				layout.getBackground().setAlpha(150);
+				thetoast.setView(layout);
+				thetoast.show();
+			}
+		}));
+	} catch(e) {
+		print(e);
+	}
+}
+
+
+function X(text, showPrefix) {
+	try {
+		var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+		ctx.runOnUiThread(new java.lang.Runnable({
+			run: function () {
+				var thetoast = android.widget.Toast.makeText(com.mojang.minecraftpe.MainActivity.currentMainActivity.get(), "" + text, android.widget.Toast.LENGTH_LONG);
+				var layout = new android.widget.LinearLayout(ctx);
+				var msg = new android.widget.TextView(ctx);
+				if(showPrefix == null) { 
+                text = "Xidan: " + text;
+				} else { 
+                text = showPrefix + ": " + text;
+                }
+				msg.setText(text);
+				msg.setGravity(android.view.Gravity.CENTER);
+				msg.setTextSize(15);
+				msg.setPadding(10, 10, 10, 10);
+				msg.setTextColor(android.graphics.Color.WHITE);
+				
+				var btnpic = new android.graphics.drawable.GradientDrawable();
+				btnpic.setColor(android.graphics.Color.BLACK);
+				btnpic.setStroke(5, android.graphics.Color.RED);
+				
+				layout.addView(msg);
+				layout.setBackground(btnpic);
+				layout.getBackground().setAlpha(150);
+				thetoast.setView(layout);
+				thetoast.show();
+			}
+		}));
+	} catch(e) {
+		print(e);
+	}
+}
+
+function FastEatOn(id) {
+    Item.setProperties(4 + id, {
+    "name": "apple",
+    "id": 4,
+    "icon": "apple",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(66 + id, {
+    "name": "golden_apple",
+    "id": 66,
+    "icon": "apple_golden",
+    "category": "Miscellaneous",
+    "stack_by_data": true,
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "foil": false,
+    "hover_text_color": "aqua",
+
+    "food": {
+      "nutrition": 4, 
+      "saturation_modifier": "supernatural",
+      "is_meat": false, 
+      "effects": [
+        {
+          "name": "regeneration",
+          "chance": 1.0,
+          "duration": 5,
+          "amplifier": 1
+        },
+        {
+          "name": "absorption",
+          "chance": 1.0,
+          "duration": 120, 
+          "amplifier": 0
+        }
+      ],
+      "enchanted_effects": [
+        {
+          "name": "regeneration",
+          "chance": 0.66,
+          "duration": 30,
+          "amplifier": 4
+        },
+        {
+          "name": "absorption",
+          "chance": 0.66,
+          "duration": 120, 
+          "amplifier": 0
+        },
+        {
+          "name": "resistance", 
+          "chance": 0.66,
+          "duration": 300,
+          "amplifier": 0
+        },
+        {
+          "name": "fire_resistance",
+          "chance": 0.66,
+          "duration": 300,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(210 + id, {
+    "name": "appleEnchanted", 
+    "id": 210,
+    "icon": "apple_golden",
+    "category": "Miscellaneous",
+    "hand_equipped": false,
+    "stack_by_data": true,
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "foil": true,
+    "hover_text_color": "light_purple",
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "supernatural",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "regeneration",
+          "chance": 1.0,
+          "duration": 30,
+          "amplifier": 4
+        },
+        {
+          "name": "absorption",
+          "chance": 1.0,
+          "duration": 120, 
+          "amplifier": 0
+        },
+        {
+          "name": "resistance", 
+          "chance": 1.0,
+          "duration": 300,
+          "amplifier": 0
+        },
+        {
+          "name": "fire_resistance",
+          "chance": 1.0,
+          "duration": 300,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(26 + id, {
+    "name": "mushroom_stew",
+    "id": 26,
+    "icon": "mushroom_stew",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "is_meat": false,
+      "using_converts_to": "item.bowl"
+    }
+  });
+  Item.setProperties(41 + id, {
+    "name": "bread",
+    "id": 41,
+    "icon": "bread",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(63 + id, {
+    "name": "porkchop",
+    "id": 63,
+    "icon": "porkchop_raw",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(64 + id, {
+    "name": "porkchop_cooked",
+    "id": 64,
+    "icon": "porkchop_cooked",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(93 + id, {
+    "name": "fish",
+    "id": 93,
+    "icon": "fish",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(204 + id, {
+    "name": "salmon",
+    "id": 204,
+    "icon": "salmon",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(205 + id, {
+    "name": "clownfish",
+    "id": 205,
+    "icon": "clownfish",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(206 + id, {
+    "name": "pufferfish",
+    "id": 206,
+    "icon": "pufferfish",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "poor",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "poison",
+          "duration": 60,
+          "amplifier": 3
+        },
+        {
+          "name": "nausea", 
+          "duration": 15,
+          "amplifier": 1
+        },
+        {
+          "name": "hunger",
+          "duration": 15,
+          "amplifier": 2
+        }
+      ]
+    }
+  });
+  Item.setProperties(94 + id, {
+    "name": "cooked_fish",
+    "id": 94,
+    "icon": "cooked_fish",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "eat_sound": "random.burp",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(207 + id, {
+    "name": "cooked_salmon",
+    "id": 207,
+    "icon": "cooked_salmon",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(101 + id, {
+    "name": "cookie",
+    "id": 101,
+    "icon": "cookie",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(104 + id, {
+    "name": "melon",
+    "id": 104,
+    "icon": "melon",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(107 + id, {
+    "name": "beef",
+    "id": 107,
+    "icon": "beef_raw",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(108 + id, {
+    "name": "steak",
+    "id": 108,
+    "icon": "beef_cooked",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(109 + id, {
+    "name": "chicken",
+    "id": 109,
+    "icon": "chicken_raw",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "hunger",
+          "chance": 0.3,
+          "duration": 30,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(110 + id, {
+    "name": "cooked_chicken",
+    "id": 110,
+    "icon": "chicken_cooked",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(167 + id, {
+    "name": "muttonRaw",
+    "id": 167,
+    "icon": "mutton_raw",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(168 + id, {
+    "name": "muttonCooked",
+    "id": 168,
+    "icon": "mutton_cooked",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(111 + id, {
+    "name": "rotten_flesh",
+    "id": 111,
+    "icon": "rotten_flesh",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "poor",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "hunger",
+          "chance": 0.3,
+          "duration": 30,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(119 + id, {
+    "name": "spider_eye",
+    "id": 119,
+    "icon": "spider_eye",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "good",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "poison",
+          "chance": 1.0,
+          "duration": 5,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(135 + id, {
+    "name": "carrot",
+    "id": 135,
+    "icon": "carrot",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    },
+    "seed": {
+      "crop_result": "carrots",
+      "plant_at": "farmland"
+    }
+  });
+  Item.setProperties(136 + id, {
+    "name": "potato",
+    "id": 136,
+    "icon": "potato",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "low",
+      "is_meat": false
+    },
+    "seed": {
+      "crop_result": "potatoes",
+      "plant_at": "farmland"
+    }
+  });
+  Item.setProperties(137 + id, {
+    "name": "baked_potato",
+    "id": 137,
+    "icon": "potato_baked",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(138 + id, {
+    "name": "poisonous_potato",
+    "id": 138,
+    "icon": "potato_poisonous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "poison",
+          "chance": 0.6,
+          "duration": 5,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(140 + id, {
+    "name": "golden_carrot",
+    "id": 140,
+    "icon": "carrot_golden",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "supernatural",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(144 + id, {
+    "name": "pumpkin_pie",
+    "id": 144,
+    "icon": "pumpkin_pie",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(155 + id, {
+    "name": "rabbit",
+    "id": 155,
+    "icon": "rabbit",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(156 + id, {
+    "name": "cooked_rabbit",
+    "id": 156,
+    "icon": "rabbit_cooked",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(157 + id, {
+    "name": "rabbit_stew",
+    "id": 157,
+    "icon": "rabbit_stew",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 10,
+      "saturation_modifier": "normal",
+      "using_converts_to": "bowl",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(201 + id, {
+    "name": "beetroot",
+    "id": 201,
+    "icon": "beetroot",
+    "use_animation": "eat",
+    "use_duration": uspe,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+    Item.setProperties(203 + id, {
+    "name": "beetroot_soup",
+    "id": 203,
+    "icon": "beetroot_soup",
+    "use_animation": "eat",
+    "use_duration": uspe,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "using_converts_to": "bowl",
+      "is_meat": false
+    }
+  
+  });
+    
+    
+
+}
+
+
+
+
+
+  function FastEatOff(id) {
+    Item.setProperties(4 + id, {
+    "name": "apple",
+    "id": 4,
+    "icon": "apple",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(66 + id, {
+    "name": "golden_apple",
+    "id": 66,
+    "icon": "apple_golden",
+    "category": "Miscellaneous",
+    "stack_by_data": true,
+    "use_animation": "eat",
+    "use_duration": 32,
+    "foil": false,
+    "hover_text_color": "aqua",
+
+    "food": {
+      "nutrition": 4, 
+      "saturation_modifier": "supernatural",
+      "is_meat": false, 
+      "effects": [
+        {
+          "name": "regeneration",
+          "chance": 1.0,
+          "duration": 5,
+          "amplifier": 1
+        },
+        {
+          "name": "absorption",
+          "chance": 1.0,
+          "duration": 120, 
+          "amplifier": 0
+        }
+      ],
+      "enchanted_effects": [
+        {
+          "name": "regeneration",
+          "chance": 0.66,
+          "duration": 30,
+          "amplifier": 4
+        },
+        {
+          "name": "absorption",
+          "chance": 0.66,
+          "duration": 120, 
+          "amplifier": 0
+        },
+        {
+          "name": "resistance", 
+          "chance": 0.66,
+          "duration": 300,
+          "amplifier": 0
+        },
+        {
+          "name": "fire_resistance",
+          "chance": 0.66,
+          "duration": 300,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(210 + id, {
+    "name": "appleEnchanted", 
+    "id": 210,
+    "icon": "apple_golden",
+    "category": "Miscellaneous",
+    "hand_equipped": false,
+    "stack_by_data": true,
+    "use_animation": "eat",
+    "use_duration": 32,
+    "foil": true,
+    "hover_text_color": "light_purple",
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "supernatural",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "regeneration",
+          "chance": 1.0,
+          "duration": 30,
+          "amplifier": 4
+        },
+        {
+          "name": "absorption",
+          "chance": 1.0,
+          "duration": 120, 
+          "amplifier": 0
+        },
+        {
+          "name": "resistance", 
+          "chance": 1.0,
+          "duration": 300,
+          "amplifier": 0
+        },
+        {
+          "name": "fire_resistance",
+          "chance": 1.0,
+          "duration": 300,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(26 + id, {
+    "name": "mushroom_stew",
+    "id": 26,
+    "icon": "mushroom_stew",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "is_meat": false,
+      "using_converts_to": "item.bowl"
+    }
+  });
+  Item.setProperties(41 + id, {
+    "name": "bread",
+    "id": 41,
+    "icon": "bread",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(63 + id, {
+    "name": "porkchop",
+    "id": 63,
+    "icon": "porkchop_raw",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(64 + id, {
+    "name": "porkchop_cooked",
+    "id": 64,
+    "icon": "porkchop_cooked",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(93 + id, {
+    "name": "fish",
+    "id": 93,
+    "icon": "fish",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(204 + id, {
+    "name": "salmon",
+    "id": 204,
+    "icon": "salmon",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(205 + id, {
+    "name": "clownfish",
+    "id": 205,
+    "icon": "clownfish",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "poor",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(206 + id, {
+    "name": "pufferfish",
+    "id": 206,
+    "icon": "pufferfish",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "poor",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "poison",
+          "duration": 60,
+          "amplifier": 3
+        },
+        {
+          "name": "nausea", 
+          "duration": 15,
+          "amplifier": 1
+        },
+        {
+          "name": "hunger",
+          "duration": 15,
+          "amplifier": 2
+        }
+      ]
+    }
+  });
+  Item.setProperties(94 + id, {
+    "name": "cooked_fish",
+    "id": 94,
+    "icon": "cooked_fish",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "eat_sound": "random.burp",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(207 + id, {
+    "name": "cooked_salmon",
+    "id": 207,
+    "icon": "cooked_salmon",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_damage": 0,
+    "stacked_by_data": true,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(101 + id, {
+    "name": "cookie",
+    "id": 101,
+    "icon": "cookie",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "poor",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(104 + id, {
+    "name": "melon",
+    "id": 104,
+    "icon": "melon",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(107 + id, {
+    "name": "beef",
+    "id": 107,
+    "icon": "beef_raw",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(108 + id, {
+    "name": "steak",
+    "id": 108,
+    "icon": "beef_cooked",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(109 + id, {
+    "name": "chicken",
+    "id": 109,
+    "icon": "chicken_raw",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "hunger",
+          "chance": 0.3,
+          "duration": 30,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(110 + id, {
+    "name": "cooked_chicken",
+    "id": 110,
+    "icon": "chicken_cooked",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(167 + id, {
+    "name": "muttonRaw",
+    "id": 167,
+    "icon": "mutton_raw",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(168 + id, {
+    "name": "muttonCooked",
+    "id": 168,
+    "icon": "mutton_cooked",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "good",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(111 + id, {
+    "name": "rotten_flesh",
+    "id": 111,
+    "icon": "rotten_flesh",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 4,
+      "saturation_modifier": "poor",
+      "is_meat": true,
+      "effects": [
+        {
+          "name": "hunger",
+          "chance": 0.3,
+          "duration": 30,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(119 + id, {
+    "name": "spider_eye",
+    "id": 119,
+    "icon": "spider_eye",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "good",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "poison",
+          "chance": 1.0,
+          "duration": 5,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(135 + id, {
+    "name": "carrot",
+    "id": 135,
+    "icon": "carrot",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    },
+    "seed": {
+      "crop_result": "carrots",
+      "plant_at": "farmland"
+    }
+  });
+  Item.setProperties(136 + id, {
+    "name": "potato",
+    "id": 136,
+    "icon": "potato",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "low",
+      "is_meat": false
+    },
+    "seed": {
+      "crop_result": "potatoes",
+      "plant_at": "farmland"
+    }
+  });
+  Item.setProperties(137 + id, {
+    "name": "baked_potato",
+    "id": 137,
+    "icon": "potato_baked",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(138 + id, {
+    "name": "poisonous_potato",
+    "id": 138,
+    "icon": "potato_poisonous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 2,
+      "saturation_modifier": "low",
+      "is_meat": false,
+      "effects": [
+        {
+          "name": "poison",
+          "chance": 0.6,
+          "duration": 5,
+          "amplifier": 0
+        }
+      ]
+    }
+  });
+  Item.setProperties(140 + id, {
+    "name": "golden_carrot",
+    "id": 140,
+    "icon": "carrot_golden",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "supernatural",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(144 + id, {
+    "name": "pumpkin_pie",
+    "id": 144,
+    "icon": "pumpkin_pie",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 8,
+      "saturation_modifier": "low",
+      "is_meat": false
+    }
+  });
+  Item.setProperties(155 + id, {
+    "name": "rabbit",
+    "id": 155,
+    "icon": "rabbit",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 3,
+      "saturation_modifier": "low",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(156 + id, {
+    "name": "cooked_rabbit",
+    "id": 156,
+    "icon": "rabbit_cooked",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 5,
+      "saturation_modifier": "normal",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(157 + id, {
+    "name": "rabbit_stew",
+    "id": 157,
+    "icon": "rabbit_stew",
+    "category": "Miscellaneous",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 10,
+      "saturation_modifier": "normal",
+      "using_converts_to": "bowl",
+      "is_meat": true
+    }
+  });
+  Item.setProperties(201 + id, {
+    "name": "beetroot",
+    "id": 201,
+    "icon": "beetroot",
+    "use_animation": "eat",
+    "use_duration": 32,
+
+    "food": {
+      "nutrition": 1,
+      "saturation_modifier": "normal",
+      "is_meat": false
+    }
+  });
+    Item.setProperties(203 + id, {
+    "name": "beetroot_soup",
+    "id": 203,
+    "icon": "beetroot_soup",
+    "use_animation": "eat",
+    "use_duration": 32,
+    "max_stack_size": 1,
+
+    "food": {
+      "nutrition": 6,
+      "saturation_modifier": "normal",
+      "using_converts_to": "bowl",
+      "is_meat": false
+    }
+  
+  });
+  
+  
+  }
+  
+     var tos;
+function showToS() {
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+        try{
+            var tosLayout = new android.widget.LinearLayout(ctx);
+            var tosScroll = new android.widget.ScrollView(ctx);
+            var tosLayout1 = new android.widget.LinearLayout(ctx);
+            tosLayout.setOrientation(1);
+            tosLayout1.setOrientation(1);
+            tosScroll.addView(tosLayout);
+            tosLayout1.addView(tosScroll);
+            tosLayout.setBackground(qeq);
+
+		    var tosInfo = new Button(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Обновление");
+			tosInfo.setTextColor(android.graphics.Color.CYAN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+			
+           var tosInfo = new TextView(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Убрана вибрация");
+			tosInfo.setTextColor(android.graphics.Color.GREEN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+			
+			var tosInfo = new TextView(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Изменен [BIND]");
+			tosInfo.setTextColor(android.graphics.Color.GREEN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+
+var tosInfo = new TextView(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Добавлен JetPack");
+			tosInfo.setTextColor(android.graphics.Color.GREEN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+
+var tosInfo = new TextView(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Добавлен LongJump");
+			tosInfo.setTextColor(android.graphics.Color.GREEN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+
+			var tosInfo = new TextView(ctx);
+		    tosInfo.setTextSize(15);
+			tosInfo.setText("Убраны не нужные функции из меню [BIND]");
+			tosInfo.setTextColor(android.graphics.Color.GREEN);
+			tosInfo.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+			tosInfo.getBackground().setAlpha(150);
+			tosInfo.setGravity(Gravity.CENTER);
+			tosLayout.addView(tosInfo);
+			
+		var yesBtn = new android.widget.Button(ctx);
+            yesBtn.setText("exit");
+            yesBtn.setTextColor(android.graphics.Color.RED);   
+			yesBtn.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.BLACK));
+            yesBtn.getBackground().setAlpha(150);
+            yesBtn.setTextSize(15);
+            yesBtn.setGravity(android.view.Gravity.CENTER);
+            yesBtn.setOnClickListener(new android.view.View.OnClickListener({
+                onClick: function(viewarg){
+                    tos.dismiss();
+                    showMenuBtn();
+              }
+            }));
+            tosLayout.addView(yesBtn);
+
+tos = new PopupWindow(tosLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/2, ctx.getWindowManager().getDefaultDisplay().getHeight()/2);
+	        tos.setAnimationStyle(android.R.style.Animation_InputMethod);
+            tos.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            tos.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.CENTER | android.view.Gravity.CENTER, 0, 0);
+        } catch(error) {
+            print("An error occured: " + error);
+        }
+    }}));
+}
+showToS();
+
+
+
+function mainMenu2(){
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var menuLayout = new android.widget.LinearLayout(ctx);
+    var menuScroll = new android.widget.ScrollView(ctx);
+    var menuLayout1 = new android.widget.LinearLayout(ctx);
+    menuLayout.setOrientation(1);
+    menuLayout1.setOrientation(1);
+    menuScroll.addView(menuLayout);
+    menuLayout1.addView(menuScroll);
+
+var kekpp = new android.widget.TextView(ctx);
+    kekpp.setText(' ');
+   kekpp.setTextSize(2);
+   kekpp.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekpp);
+    
+var luch = new android.widget.Button(ctx);
+   luch.setText('КИТ ЛУЧНИК'); 
+   luch.setTextSize(10);
+    luch.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   luch.setBackground(bg98);   luch.setTextColor(android.graphics.Color.GREEN); 
+    luch.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+Player.addItemInventory(261, 1, 0)
+Player.addItemInventory(262, 64, 0)
+Player.addItemInventory(297, 20, 0)
+Player.addItemInventory(466, 32, 0)
+Player.addItemInventory(302, 1, 0)
+Player.addItemInventory(303, 1, 0)
+Player.addItemInventory(304, 1, 0)
+Player.addItemInventory(305, 1, 0)
+D('Набор лучника выдан!');
+    }
+    }));
+    menuLayout.addView(luch);
+
+
+    var kekpp1 = new android.widget.TextView(ctx);
+    kekpp1.setText(' ');
+   kekpp1.setTextSize(2);
+   kekpp1.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekpp1);
+
+    
+var kit = new android.widget.Button(ctx);
+   kit.setText('КИТ ЖЕЛЕЗНИК'); 
+   kit.setTextSize(10);
+    kit.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   kit.setBackground(bg98);   kit.setTextColor(android.graphics.Color.GREEN); 
+    kit.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+Player.addItemInventory(261, 1, 0)
+Player.addItemInventory(297, 1, 0)
+Player.addItemInventory(262, 64, 0)
+Player.addItemInventory(297, 20, 0)
+Player.addItemInventory(466, 32, 0)
+Player.addItemInventory(306, 1, 0)
+Player.addItemInventory(307, 1, 0)
+Player.addItemInventory(308, 1, 0)
+Player.addItemInventory(309, 1, 0)
+D('Набор железника выдан!');
+    }
+    }));
+    menuLayout.addView(kit);
+
+
+    var kekpp12 = new android.widget.TextView(ctx);
+    kekpp12.setText(' ');
+   kekpp12.setTextSize(2);
+   kekpp12.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekpp12);
+  
+    
+var kitt1 = new android.widget.Button(ctx);
+   kitt1.setText('КИТ АЛМАЗНИКА'); 
+   kitt1.setTextSize(10);
+    kitt1.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+  kitt1.setBackground(bg98);   kitt1.setTextColor(android.graphics.Color.GREEN); 
+    kitt1.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+Player.addItemInventory(310, 1, 0)
+Player.addItemInventory(296, 1, 0)
+Player.addItemInventory(311, 1, 0)
+Player.addItemInventory(312, 1, 0)
+Player.addItemInventory(313, 1, 0)
+Player.addItemInventory(450, 1, 0)
+Player.addItemInventory(396, 32, 0)
+Player.addItemInventory(466, 32, 0)
+D('Набор алмазника выдан!');
+    }
+    }));
+    menuLayout.addView(kitt1);
+
+
+    var kekpp1z = new android.widget.TextView(ctx);
+    kekpp1z.setText('Киты будут пополняться');
+   kekpp1z.setTextSize(12);
+   kekpp1z.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekpp1z);
+  
+
+
+menulell = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/5, ctx.getWindowManager().getDefaultDisplay().getHeight()/2);
+    menulell.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+    menulell.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+    }catch(error){
+ D('Код не трогай блэт: ' + error);
+    }
+    }}));
+    }
+            
+            
+ function mainMenu100(){
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var menuLayout = new android.widget.LinearLayout(ctx);
+    var menuScroll = new android.widget.ScrollView(ctx);
+    var menuLayout1 = new android.widget.LinearLayout(ctx);
+    menuLayout.setOrientation(1);
+    menuLayout1.setOrientation(1);
+    menuScroll.addView(menuLayout);
+    menuLayout1.addView(menuScroll);
+    
+    
+ var buttonh = new android.widget.Button(ctx);
+    buttonh.setText('СКРЫТЬ КНОПКУ'); 
+    buttonh.setTextSize(10);
+    buttonh.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   buttonh.setBackground(s2);   buttonh.setTextColor(android.graphics.Color.RED); 
+    buttonh.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+     if(GUIme != null && GUIme.isShowing()) { 
+                GUIme.dismiss();
+                } //Close
+                exitlel.dismiss();
+    menu100.dismiss(); //C
+
+ D("8856")
+    }
+    }));
+    menuLayout.addView(buttonh);
+var kekl = new android.widget.TextView(ctx);
+    kekl.setText(' ');
+   kekl.setTextSize(2);
+   kekl.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekl);  
+var button111 = new android.widget.Button(ctx);
+    button111.setText('ФУНКЦИИ');
+    button111.setTextSize(10);
+    button111.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   button111.setBackground(bg9m);  button111.setTextColor(android.graphics.Color.RED); 
+    button111.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+mainMenu1();
+				exit1();
+				menu100.dismiss();
+				exitlel.dismiss();
+    }
+    }));
+    menuLayout.addView(button111);
+             
+     var kekqq = new android.widget.TextView(ctx);
+    kekqq.setText(' ');
+   kekqq.setTextSize(2);
+ kekqq.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kekqq);
+
+var button1y11 = new android.widget.Button(ctx);
+    button1y11.setText('ФУНКЦИИ [BIND]');
+    button1y11.setTextSize(10);
+    button1y11.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   button1y11.setBackground(bg9m);  button1y11.setTextColor(android.graphics.Color.RED); 
+    button1y11.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+mainMenub();
+				exitb();
+				menu100.dismiss();
+				exitlel.dismiss();
+    }
+    }));
+    menuLayout.addView(button1y11);
+             
+     var lkekqq = new android.widget.TextView(ctx);
+    lkekqq.setText(' ');
+   lkekqq.setTextSize(2);
+ lkekqq.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(lkekqq);
+
+var button1211 = new android.widget.Button(ctx);
+    button1211.setText('КИТ НАБОРЫ');
+    button1211.setTextSize(10);
+    button1211.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.WHITE));
+   button1211.setBackground(bg9m);  button1211.setTextColor(android.graphics.Color.RED); 
+    button1211.setOnClickListener(new android.view.View.OnClickListener({
+    onClick: function(viewarg){
+mainMenu2();
+				exit3();
+				menu100.dismiss();
+				exitlel.dismiss();
+    }
+    }));
+    menuLayout.addView(button1211);
+             
+     var kek5 = new android.widget.TextView(ctx);
+    kek5.setText(' ');
+   kek5.setTextSize(2);
+    kek5.setTextColor(android.graphics.Color.parseColor('#00F4FC'));//Зелёный
+menuLayout.addView(kek5);
+         
+var tpxyz = new android.widget.Button(ctx);
+tpxyz.setText('Телепортироваться');
+tpxyz.setTextSize(8)
+tpxyz.setBackground(bgz9m)
+tpxyz.setTextColor(android.graphics.Color.RED);
+tpxyz.setOnClickListener(new android.view.View.OnClickListener({
+onClick: function(viewarg){
+Level.playSound(Player.getX(), Player.getY(), Player.getZ(), "random.click", 100, 100);
+var tpx = new android.app.AlertDialog.Builder(ctx);
+tpx.setTitle('Телепортация...');
+var scroll = new android.widget.ScrollView(ctx);
+var layout = new android.widget.LinearLayout(ctx);
+layout.setOrientation(1);
+var Xx = new android.widget.EditText(ctx);
+Xx.setHint('Введите координату X');
+var Yy = new android.widget.EditText(ctx); Yy.setHint('Введите координату Y'); 
+var Zz = new android.widget.EditText(ctx); Zz.setHint('Введите координату Z');
+var params = new android.view.ViewGroup.LayoutParams(-2,-2);
+layout.addView(Xx,params);
+layout.addView(Yy,params);
+layout.addView(Zz,params);
+tpx.setView(layout);
+tpx.setNegativeButton('Отмена', new android.content.DialogInterface.OnClickListener(){
+onClick: function(viewarg){
+Level.playSound(Player.getX(), Player.getY(), Player.getZ(), "random.click", 100, 100);
+}});
+tpx.setPositiveButton('Телепорт', new android.content.DialogInterface.OnClickListener(){
+onClick: function(viewarg){
+Level.playSound(Player.getX(), Player.getY(), Player.getZ(), "random.click", 100, 100);
+Entity.setPosition(getPlayerEnt(), Xx.getText().toString(), Yy.getText().toString(), Zz.getText().toString());
+}});
+var dialog = tpx.create();
+dialog.show();
+}}));
+menuLayout.addView(tpxyz);   
+    
+    menu100 = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/5, ctx.getWindowManager().getDefaultDisplay().getHeight()/1.4);
+    menu100.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+    menu100.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+    }catch(error){
+ D('Код не трогай блэт: ' + error);
+    }
+    }}));
+    }
+    
+    
+function showHBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		    
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('H');
+      button.setTextOn("H")
+      button.setTextOff("H")
+      button.setPadding(10,10,10,10);
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+      button.setTextOn('H'); button.setTextColor(Color.GREEN);
+      D('Hitbox [BIND] enabled')
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+      hitboxss = true; 
+      hitboxed = true; 
+      htss = true;
+      hted = true;
+      }else{
+      button.setTextOff('H');
+      button.setTextColor(Color.RED);
+     X('Hitbox [BIND] disabled') 
+      button.setBackground(ht1)
+      htss = false;
+      hted = false;
+      hitboxss = false; 
+      hitboxed = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUI4 = new android.widget.PopupWindow(layout, dip7px(40), dip7px(40));
+    GUI4.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUI4.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 300, 0);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+
+function showVRBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		    
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('V');
+      button.setTextOn("V")
+      button.setTextOff("V")
+      button.setPadding(10,10,10,10);
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+      button.setTextOn('V'); button.setTextColor(Color.GREEN);
+      D('VisualRoad [BIND] enabled')
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+    visaulroadss = true; 
+   visualroaded = true; 
+      vrss = true;
+      vred = true;
+      }else{
+      button.setTextOff('V');
+      button.setTextColor(Color.RED);
+     X('VisualRoad [BIND] disabled') 
+      button.setBackground(ht1)
+      vrss = false;
+      vred = false;
+  visualroadss = false; 
+      visualroaded = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUIvr = new android.widget.PopupWindow(layout, dip10px(40), dip10px(40));
+    GUIvr.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIvr.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 700, 0);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+
+                              
+function mainMenub(){
+    var ctx = com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
+    ctx.runOnUiThread(new java.lang.Runnable({ run: function(){
+    try{
+    var menuLayout = new android.widget.LinearLayout(ctx);
+    var menuScroll = new android.widget.ScrollView(ctx);
+    var menuLayout1 = new android.widget.LinearLayout(ctx);
+    menuLayout.setOrientation(1);
+    menuLayout1.setOrientation(1);
+    menuScroll.addView(menuLayout);
+    menuLayout1.addView(menuScroll);
+var ams = new Switch(ctx);
+      ams.setText("HitBoost");
+     ams.setTextColor(android.graphics.Color.RED);
+      ams.setPadding(10, 3, 3, 3);
+      ams.setTextSize(10);
+      ams.setChecked(amed);
+ams.setBackground(h2);  
+      ams.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!amed){
+  showHBBtn();
+      amss = true;
+      amed = true;
+      }else{
+   GUIaim.dismiss();
+   
+      amss = false;
+      amed = false;
+      }
+      ams.setChecked(amed);
+      }
+      }));
+      menuLayout.addView(ams);
+
+		      var opr = new android.widget.TextView(ctx);
+            opr.setTextSize(2);
+            opr. setText(" ");//Title
+           opr. setTextColor(android.graphics.Color.RED); //Color
+            opr.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(opr);
+
+var htbs = new Switch(ctx);
+      htbs.setText("Hitbox");
+      htbs.setTextColor(android.graphics.Color.RED);
+      htbs.setPadding(10, 3, 3, 3);
+      htbs.setTextSize(10);
+      htbs.setChecked(htbed);
+htbs.setBackground(h2);  
+      htbs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!htbed){
+  showHBtn();
+      htbss = true;
+      htbed = true;
+      }else{
+   GUI4.dismiss();
+   
+      htbss = false;
+      htbed = false;
+      }
+      htbs.setChecked(htbed);
+      }
+      }));
+      menuLayout.addView(htbs);
+      
+      var opr = new android.widget.TextView(ctx);
+            opr.setTextSize(2);
+            opr. setText(" ");//Title
+           opr. setTextColor(android.graphics.Color.RED); //Color
+            opr.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(opr);
+
+
+ var vrds = new Switch(ctx);
+      vrds.setText("VisualRoad");
+      vrds.setTextColor(android.graphics.Color.RED);
+      vrds.setPadding(10, 3, 3, 3);
+      vrds.setTextSize(10);
+      vrds.setChecked(vrded);
+vrds.setBackground(h2);  
+      vrds.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!vrded){
+   showVRBtn();
+      vrdss = true;
+      vrded = true;
+      }else{
+    GUIvr.dismiss();
+    
+      vrdss = false;
+      vrded = false;
+      }
+      vrds.setChecked(vrded);
+      }
+      }));
+      menuLayout.addView(vrds);
+      
+      
+var qallq = new android.widget.TextView(ctx);
+            qallq.setTextSize(2);
+            qallq.setText(" ");//Title
+           qallq.setTextColor(android.graphics.Color.RED); //Color
+            qallq.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qallq)  
+      
+var gl1s = new Switch(ctx);
+      gl1s.setText("Glide");
+      gl1s.setTextColor(android.graphics.Color.RED);
+      gl1s.setPadding(10, 3, 3, 3);
+      gl1s.setTextSize(10);
+      gl1s.setChecked(gl1ed);
+gl1s.setBackground(h2);  
+     gl1s.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!gl1ed){
+   showGLBtn();
+      gl1ss = true;
+      gl1ed = true;
+      }else{
+   GUIgll.dismiss();
+    
+      gl1ss = false;
+      gl1ed = false;
+      }
+      gl1s.setChecked(gl1ed);
+      }
+      }));
+      menuLayout.addView(gl1s);
+
+
+var qlqa = new android.widget.TextView(ctx);
+            qlqa.setTextSize(2);
+            qlqa.setText(" ");//Title
+qlqa.setTextColor(android.graphics.Color.RED); //Color
+            qlqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qlqa)    
+
+     var ddbs = new Switch(ctx);
+      ddbs.setText("Derp");
+      ddbs.setTextColor(android.graphics.Color.RED);
+     ddbs.setPadding(10, 3, 3, 3);
+    ddbs.setTextSize(10);
+      ddbs.setChecked(ddbed);
+ddbs.setBackground(h2);  
+     ddbs.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!ddbed){
+      ddbss = true;
+      ddbed = true;
+      showDPBtn();
+      }else{
+      ddbss = false;
+      ddbed = false;
+      
+      GUIdp.dismiss();
+      }
+      ddbs.setChecked(ddbed);
+      }
+      }));
+      menuLayout.addView(ddbs);
+
+var qlqa = new android.widget.TextView(ctx);
+            qlqa.setTextSize(2);
+            qlqa.setText(" ");//Title
+qlqa.setTextColor(android.graphics.Color.RED); //Color
+            qlqa.setGravity(android.view.Gravity.LEFT);
+            menuLayout.addView(qlqa)    
+
+     var jtpps = new Switch(ctx);
+      jtpps.setText("JetPack");
+      jtpps.setTextColor(android.graphics.Color.RED);
+     jtpps.setPadding(10, 3, 3, 3);
+    jtpps.setTextSize(10);
+      jtpps.setChecked(jtpped);
+jtpps.setBackground(h2);  
+     jtpps.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener({
+      onCheckedChanged: function(){
+      if(!jtpped){
+      jtppss = true;
+      jtpped = true;
+      showJTPBtn();
+      }else{
+     jtppss = false;
+      jtpped = false;
+      
+      GUIjtp.dismiss();
+      }
+      jtpps.setChecked(jtpped);
+      }
+      }));
+      menuLayout.addView(jtpps);
+           
+menubind = new android.widget.PopupWindow(menuLayout1, ctx.getWindowManager().getDefaultDisplay().getWidth()/5, ctx.getWindowManager().getDefaultDisplay().getHeight()/2);
+    menubind.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT));
+    menubind.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 0);
+    }catch(error){
+ D('Код не трогай блэт: ' + error);
+    }
+    }}));
+    }
+
+
+function showGLBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);     
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('G');
+      button.setTextOn("G")
+      button.setTextOff("G")
+      button.setPadding(10,10,10,10);
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+      button.setTextOn('G'); button.setTextColor(Color.GREEN);
+      D('Glide [BIND] enabled')
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+   glss = true; 
+   gled = true; 
+      glbss = true;
+     glbed = true;
+      }else{
+      button.setTextOff('G');
+      button.setTextColor(Color.RED);
+     X('Glide [BIND] disabled') 
+      button.setBackground(ht1)
+      glbss = false;
+      glbed = false;
+  glss = false; 
+      gled = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUIgll = new android.widget.PopupWindow(layout, dip16px(40), dip16px(40));
+    GUIgll.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIgll.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 100);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+function showHBBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);  
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('HB');
+      button.setTextOn("HB")
+      button.setTextOff("HB")
+      button.setPadding(10,10,10,10);
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+      button.setTextOn('HB'); button.setTextColor(Color.GREEN);
+      D('HitBoost [BIND] enabled')
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+   aimss = true; 
+   aimed = true; 
+      ambss = true;
+     ambed = true;
+      }else{
+      button.setTextOff('HB');
+      button.setTextColor(Color.RED);
+     X('HitBoost [BIND] disabled') 
+      button.setBackground(ht1)
+      ambss = false;
+      ambed = false;
+  aimss = false; 
+      aimed = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUIaim = new android.widget.PopupWindow(layout, dip17px(40), dip17px(40));
+    GUIaim.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIaim.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, 0, 305);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+
+function showDPBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		        
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('D');
+      button.setPadding(10,10,10,10);
+      button.setTextOn("D")
+      button.setTextOff("D")
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+   button.setTextOn('D'); button.setTextColor(Color.GREEN);   
+   D('Derp [BIND] enabled')   
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+  derpss = true; 
+   derped = true; 
+      dbss = true;
+     dbed = true;
+      }else{
+      button.setTextOff("D")
+      button.setTextColor(Color.RED); 
+      D('Derp [BIND] disabled')    
+      button.setBackground(ht1)
+      dbss = false;
+      dbed = false;
+  derpss = false; 
+      derped = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUIdp = new android.widget.PopupWindow(layout, dip17px(40), dip17px(40));
+    GUIdp.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIdp.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.RIGHT | android.view.Gravity.TOP, 0, 250);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+  
+
+    function showJTPBtn() {
+	
+ctx.runOnUiThread(new Runnable({ run: function(){
+	try{
+		var layout = new LinearLayout(ctx);
+		layout.setOrientation(1);
+		        
+		var toggled = false;
+		var button = new android.widget.ToggleButton(ctx);
+      button.setText('J');
+      button.setPadding(10,10,10,10);
+      button.setTextOn("J")
+      button.setTextOff("J")
+      button.setChecked(toggled);
+      button.setOnClickListener(new android.view.View.OnClickListener({
+      onClick: function(viewarg){
+      if(!toggled){
+   button.setTextOn('J'); button.setTextColor(Color.GREEN);   
+   D('JetPack [BIND] enabled')   
+      button.setBackground(ht)
+      button.setTextSize(15)
+      toggled = true;
+  lngss = true; 
+   lnged = true; 
+      jtpbss = true;
+     jtpbed = true;
+      }else{
+      button.setTextOff("J")
+      button.setTextColor(Color.RED); 
+      D('JetPack [BIND] disabled')    
+      button.setBackground(ht1)
+      jtpbss = false;
+      jtpbed = false;
+  lngss = false; 
+      lnged = false; 
+      toggled = false;
+      }
+      button.setChecked(toggled);
+      }
+      }));
+      layout.addView(button);
+		
+	    GUIjtp = new android.widget.PopupWindow(layout, dip17px(40), dip17px(40));
+    GUIjtp.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(android.graphics.Color.DKGRAY));
+    GUIjtp.showAtLocation(ctx.getWindow().getDecorView(), android.view.Gravity.LEFT | android.view.Gravity.TOP, 20, 150);
+    }catch(exception){
+    print(exception);
+    }
+    }}));
+    }
+  
+
+    
